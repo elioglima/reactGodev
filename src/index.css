@@ -10,3 +10,20 @@ body {
   padding: 0;
   overflow: hidden;
 }
+
+div {
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #03080a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0b1b24;
+}

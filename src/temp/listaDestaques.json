@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Comunicação com api da GitHub",
+    "descriptions": "Aplicativo é destinado ao aprendizado sobre react-native, realizado testes no metodo GET da api do GitHub.",
+    "category": "React-Native",
+    "so-android": true,
+    "so-ios": true,
+    "font-reference": "https://github.com/elioglima/reactNativeGitHub",
+    "autor": "GoDevs"
+  },
+  {
+    "title": "Gravando e Lendo arquivo .txt no React Native",
+    "descriptions": "Aplicativo é destinado ao aprendizado sobre react-native, gravando e lendo arquivo no sistema opracional.",
+    "category": "React-Native",
+    "so-android": true,
+    "so-ios": true,
+    "font-reference": "https://github.com/elioglima/reactNativeManipularArquivo",
+    "autor": "GoDevs"
+  },
+  {
+    "title": "Organizador de viagens",
+    "descriptions": "Aplicativo é organizador de viagens, destinado ao aprendizado sobre react-native.",
+    "category": "React-Native",
+    "so-android": true,
+    "so-ios": true,
+    "font-reference": "https://github.com/elioglima/React-Native-Travels",
+    "autor": "GoDevs"
+  },
+  {
+    "title": "Gravando e Lendo arquivo .txt no React Native",
+    "descriptions": "Aplicativo é destinado ao aprendizado sobre react-native, gravando e lendo arquivo no sistema opracional.",
+    "category": "React-Native",
+    "so-android": true,
+    "so-ios": true,
+    "font-reference": "https://github.com/elioglima/reactNativeManipularArquivo",
+    "autor": "GoDevs"
+  },
+  {
+    "title": "Organizador de viagens",
+    "descriptions": "Aplicativo é organizador de viagens, destinado ao aprendizado sobre react-native.",
+    "category": "React-Native",
+    "so-android": true,
+    "so-ios": true,
+    "font-reference": "https://github.com/elioglima/React-Native-Travels",
+    "autor": "GoDevs"
+  }
+]

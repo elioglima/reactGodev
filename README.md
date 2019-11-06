@@ -9,6 +9,9 @@
     yarn add cpf_cnpj
     yarn add axios
     yarn add styled-components
+    yarn add @fortawesome/free-solid-svg-icons
 
 
     yarn add react-router connected-react-router history react-redux redux-saga js-cookie cpf_cnpj axios styled-components
+
+https://fontawesome.com/cheatsheet/free/brands

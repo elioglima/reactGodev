@@ -6,4 +6,5 @@ export const StContainer = styled.div`
     height: 100vh;
     flex-direction: column;
     background-color: rgba(0,0,0, 1);
+    /* justify-content:space-between; */
 `
