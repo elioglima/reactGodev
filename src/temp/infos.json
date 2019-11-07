@@ -1,20 +1,26 @@
 [
   {
-    "catefory": "Golang",
+    "id": 1,
+    "name": "Golang",
+    "category": "Desenvolvimento",
     "icon": "ico_golang.png",
     "desenvolvedor": "Google",
     "birthdate": 1998,
     "description": "Google LLC é uma empresa multinacional de serviços online e software dos Estados Unidos. O Google hospeda e desenvolve uma série de serviços e produtos baseados na internet e gera lucro principalmente através da publicidade pelo AdWords. A Google é a principal subsidiária da Alphabet Inc."
   },
   {
-    "catefory": "NodeJs",
+    "id": 2,
+    "name": "NodeJs",
+    "category": "Desenvolvimento",
     "icon": "ico_nodejs.png",
     "desenvolvedor": "Facebook",
     "birthdate": 2009,
     "description": "Node.js é um interpretador de JavaScript assíncrono com código aberto orientado a eventos, criado por Ryan Dahl em 2009, focado em migrar a programação do Javascript do cliente (frontend) para os servidores, criando aplicações de alta escalabilidade (como um servidor web)[1], manipulando milhares de conexões/eventos simultâneas em tempo real numa única máquina física. O Node.js (ambiente de execução Javascript no servidor) foi implementado baseado no interpretador V8 JavaScript Engine (interpretador de JavaScript em C++ com código aberto da Google, utilizado no Chrome), com desenvolvimento mantido pela fundação Node.js em parceria com a Linux Foundation."
   },
   {
-    "catefory": "React",
+    "id": 3,
+    "name": "React",
+    "category": "Desenvolvimento",
     "icon": "ico_react.png",
     "desenvolvedor": "Facebook",
     "birthdate": 2011,

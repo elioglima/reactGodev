@@ -5,12 +5,14 @@ import { ConnectedRouter } from "connected-react-router";
 
 import Home from "../pages/home";
 import Historia from "../pages/historia";
+import Postagem from "../pages/postagem";
 
 export default () => (
   <ConnectedRouter history={history}>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/historia" component={Historia} />
+      <Route exact path="/postagem" component={Postagem} />
     </Switch>
   </ConnectedRouter>
 );

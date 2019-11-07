@@ -5,6 +5,8 @@ export const StContainer = styled.div`
   width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
+  padding: 20px;
+  align-items: center;
 `;
 
 export const StImgReact = styled.div`

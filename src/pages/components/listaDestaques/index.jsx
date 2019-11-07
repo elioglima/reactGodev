@@ -11,11 +11,11 @@ const Objeto = props => {
   }, []);
 
   return (
-    <StContainer style={{ width: props.width }}>
-      {props.titulo && <StTitulo>{props.titulo}</StTitulo>}
-      <StLista>
+    <StContainer style={{ width: props.width }} theme={props.theme} >
+      {props.titulo && <StTitulo theme={props.theme}>{props.titulo}</StTitulo>}
+      <StLista theme={props.theme}>
         {dados.map(dados => {
-          return <BoxItem dados={dados} />;
+          return <BoxItem dados={dados} theme={props.theme} colCount={props.colCount} />;
         })}
       </StLista>
     </StContainer>

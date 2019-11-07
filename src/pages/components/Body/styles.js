@@ -12,7 +12,7 @@ export const StContainer = styled.div`
 `;
 
 export const StBase = styled.div`
-  padding: 10px 5%;
+  padding: ${props => props.paddingVertical ? props.paddingVertical : '0'}  ${props => props.paddingHorizontal ? props.paddingHorizontal : '0'};
   flex-direction: row;
   flex-wrap: wrap;
 `;

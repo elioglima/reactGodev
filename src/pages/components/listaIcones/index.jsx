@@ -1,20 +1,15 @@
 import React from "react";
-import { StContainer, StImgReact, StImgGolang, StImgNodeJs } from "./styles";
+import Icon from './icon'
+import { StContainer } from "./styles";
 
-const listaIcones = () => {
+const ListaIcones = (props) => {
   return (
-    <StContainer>
-      <StImgGolang>
-        <img src={require("../../../tools/img/ico_golang.png")} />
-      </StImgGolang>
-      <StImgReact>
-        <img src={require("../../../tools/img/ico_react.png")} />
-      </StImgReact>
-      <StImgNodeJs>
-        <img src={require("../../../tools/img/ico_nodejs.png")} />
-      </StImgNodeJs>
+    <StContainer theme={props.theme} >
+      <Icon src={require("../../../tools/img/ico_golang.png")} id={1} route={'/historia'} size={15} theme={props.theme} />
+      <Icon src={require("../../../tools/img/ico_react.png")} id={3} route={'/historia'} size={13} theme={props.theme} />
+      <Icon src={require("../../../tools/img/ico_nodejs.png")} id={2} route={'/historia'} size={11} theme={props.theme} />
     </StContainer>
   );
 };
 
-export default listaIcones;
+export default ListaIcones;

@@ -9,7 +9,7 @@ const Objeto = props => {
       color={props.color ? props.color : null}
     >
       {props.banner && props.banner({ height: props.bannerHeight })}
-      <StBase>{props.children}</StBase>
+      <StBase paddingVertical={props.paddingVertical} paddingHorizontal={props.paddingHorizontal} >{props.children}</StBase>
     </StContainer>
   );
 };

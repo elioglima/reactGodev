@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Amaranth|Audiowide|Caveat+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
 /*
 font-family: 'Amaranth', sans-serif;
 font-family: 'Audiowide', cursive;
 font-family: 'Caveat Brush', cursive;
+font-family: 'Roboto Slab', serif;
 */
 
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: 'Roboto Slab', serif;
 }
 
 div {

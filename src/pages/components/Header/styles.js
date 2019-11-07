@@ -14,6 +14,14 @@ export const StTitulo = styled.div`
     font-family: 'Audiowide', cursive;
     font-size:40px;
     letter-spacing:1px;
+    cursor:pointer;
+    :hover {
+        color: #f9f9f9;
+    }
+
+    :active {
+        color: #c8e6f5;
+    }
 `
 
 export const StDescritivo = styled.div`

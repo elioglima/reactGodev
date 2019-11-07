@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { push } from 'connected-react-router'
 
 import {
   StContainer,
@@ -11,12 +13,13 @@ import {
 } from './styles'
 
 const Objeto = (props) => {
+  const dispatch = useDispatch()
   const [pesquisa, setPesquisa] = useState('')
   const refPesquisa = useRef()
   return (
     <StContainer>
       <StBase1>
-        <StTitulo>{props.titulo}</StTitulo>
+        <StTitulo onClick={() => dispatch(push('/'))} >{props.titulo}</StTitulo>
         <StDescritivo>{props.descritivo}</StDescritivo>
       </StBase1>
       <StInscreverSe>Inscrever-se</StInscreverSe>

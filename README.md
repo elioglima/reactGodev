@@ -15,3 +15,10 @@
     yarn add react-router connected-react-router history react-redux redux-saga js-cookie cpf_cnpj axios styled-components
 
 https://fontawesome.com/cheatsheet/free/brands
+
+css:
+
+    // localizar o filho
+    & span:nth-child(2)
+
+    & span:first-child

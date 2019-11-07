@@ -1,28 +1,34 @@
-import React from "react";
-import { StContainer } from "./styles";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux'
 import Header from "../components/Header";
 import Body from "../components/Body";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer";
-import ListaDestaques from "../components/listaDestaques";
-import ListaIcones from "../components/listaIcones";
+import Controller from "./components/Controller";
 
-const theme = 'dark';
+import {
+  StContainer,
+} from "./styles";
 
 const Objeto = () => {
+
+  const theme = 'light'
+  const { dados } = useSelector(state => state.router.location.state || 0)
+
   return (
     <StContainer>
       <Header
         titulo="GoDev"
         descritivo="Programadores e Desenvolvedores Web, Desktop, Mobile, Games e TI BR"
       />
+      <Banner height={10} />
       <Body
-        banner={Banner}
-        paddingVertical={'0'}
-        paddingHorizontal={'5%'}
+        background={"#e5e5e5"}
+        color={"#000"}
       >
-        <ListaIcones />
-        <ListaDestaques width="80%" theme={theme} colCount={2} />
+
+        <Controller dados={dados} theme={theme} />
+
       </Body>
       <Footer />
     </StContainer>
