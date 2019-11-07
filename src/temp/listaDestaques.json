@@ -43,5 +43,14 @@
     "so-ios": true,
     "font-reference": "https://github.com/elioglima/React-Native-Travels",
     "autor": "GoDevs"
+  },
+  {
+    "title": "Organizador de viagens",
+    "descriptions": "Aplicativo é organizador de viagens, destinado ao aprendizado sobre react-native.",
+    "category": "React-Native",
+    "so-android": true,
+    "so-ios": true,
+    "font-reference": "https://github.com/elioglima/React-Native-Travels",
+    "autor": "GoDevs"
   }
 ]

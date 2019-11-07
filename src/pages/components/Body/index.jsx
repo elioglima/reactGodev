@@ -1,20 +1,17 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 
-import {
-  StContainer,
-  StBase,
-} from './styles'
+import { StContainer, StBase } from "./styles";
 
-const Objeto = (props) => {
+const Objeto = props => {
   return (
-    <StContainer>
-      {props.banner && props.banner()}
-      <StBase>
-        {props.children}
-      </StBase>
+    <StContainer
+      background={props.background ? props.background : null}
+      color={props.color ? props.color : null}
+    >
+      {props.banner && props.banner({ height: props.bannerHeight })}
+      <StBase>{props.children}</StBase>
     </StContainer>
-
-  )
+  );
 };
 
 export default Objeto;
