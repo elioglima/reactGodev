@@ -8,12 +8,13 @@
     "so-ios": true,
     "refs": ["https://github.com/elioglima/reactNativeGitHub"],
     "autor": "GoDevs",
-    "stepsCount": 0,
+    "stepsCount": 1,
     "steps": [
       {
         "id": 1,
         "titulo": "Ligando o computador",
         "texto": "Ligue o computador, no botão power.",
+        "videos": [],
         "imagens": [],
         "tags": ["react", "javascript", "aplicativo", "ios", "android"],
         "refs": []
