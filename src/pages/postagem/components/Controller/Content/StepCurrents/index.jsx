@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { StContainer, StTitulo, StTexto } from "./styles";
+import { StContainer, StTitulo, StTexto, StBase } from "./styles";
 
 const Objeto = props => {
-  const [registroStep, setRegistroStep] = useState({});
+  const [registroStep, setRegistroStep] = useState([]);
 
   useEffect(() => {
     if (props.stepCurr <= 0) return;
@@ -12,10 +12,23 @@ const Objeto = props => {
     setRegistroStep(registro[index]);
   }, [props.stepCurr]);
 
+  const TextoWrap = texto => {
+    return texto.split("\n").map(i => {
+      return <StTexto>{i}</StTexto>;
+    });
+  };
+
+  if (!registroStep) return <div />;
   return (
     <StContainer {...props}>
-      <StTitulo>{registroStep.titulo}</StTitulo>
-      <StTexto>{registroStep.texto}</StTexto>
+      {registroStep.map(reg => {
+        return (
+          <StBase>
+            {reg.titulo && <StTitulo>{reg.titulo}</StTitulo>}
+            {TextoWrap(reg.texto)}
+          </StBase>
+        );
+      })}
     </StContainer>
   );
 };

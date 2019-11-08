@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const StContainer = styled.div`
-  width: 100%;
   flex-direction: column;
   padding: 10px 10px;
+`;
+
+export const StBase = styled.div`
+  flex-direction: column;
 `;
 
 export const StTitulo = styled.div`
@@ -15,7 +18,7 @@ export const StTitulo = styled.div`
 `;
 
 export const StTexto = styled.div`
-  padding: 10px 10px 10px 0px;
+  padding: 5px 10px 5px 0px;
   font-size: 1em;
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.1em;

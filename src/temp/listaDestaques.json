@@ -9,16 +9,26 @@
     "refs": ["https://github.com/elioglima/reactNativeGitHub"],
     "autor": "GoDevs",
     "stepsCount": 1,
+    "tags": ["react", "javascript", "aplicativo", "ios", "android"],
     "steps": [
-      {
-        "id": 1,
-        "titulo": "Ligando o computador",
-        "texto": "Ligue o computador, no botão power.",
-        "videos": [],
-        "imagens": [],
-        "tags": ["react", "javascript", "aplicativo", "ios", "android"],
-        "refs": []
-      }
+      [
+        {
+          "id": 1,
+          "titulo": "Instalação do Package",
+          "texto": "Para instalar o package digite yarn add ou npm i",
+          "videos": [],
+          "imagens": [],
+          "refs": []
+        },
+        {
+          "id": 2,
+          "titulo": "",
+          "texto": "yarn add react-router \nyarn add connected-react-router \nyarn add history \nyarn add react-redux \nyarn add redux-saga \nyarn add js-cookie \nyarn add cpf_cnpj \nyarn add axios \nyarn add styled-components",
+          "videos": [],
+          "imagens": [],
+          "refs": []
+        }
+      ]
     ]
   },
   {

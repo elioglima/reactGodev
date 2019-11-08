@@ -13,8 +13,8 @@ export const StBotao = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 8px 8px 8px 8px;
-  cursor: pointer;
-  color: #3c4245;
+  ${props => props.ativo && "cursor: pointer;"};
+  color: ${props => (props.ativo ? "#1b7fbd" : "#95adbe")};
 
   & i {
     font-size: 1em;
@@ -27,15 +27,18 @@ export const StBotao = styled.div`
     font-size: 1em;
   }
 
-  :hover {
-    background: #a2a8d3;
-    color: #fff;
-  }
-
-  :active {
-    background: #38598b;
-    color: #fff;
-  }
+  ${props =>
+    props.ativo &&
+    `
+      :hover {
+        background: #a2a8d3;
+        color: #fff;
+      }
+    
+      :active {
+        background: #38598b;
+        color: #fff;
+      }`};
 `;
 
 export const StContents = styled.div`
