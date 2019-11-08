@@ -7,9 +7,7 @@ const Objeto = props => {
   const [registro, setRegistro] = useState({});
   const [stepCurr, setStepCurr] = useState(0);
   const [stepCount, setStepCount] = useState(0);
-
   useEffect(() => {
-    if (!props.dados) return
     setStepCount(props.dados.steps || 0)
     setRegistro(props.dados)
   }, [props.dados]);

@@ -23,10 +23,11 @@ const Objeto = (props) => {
         <StDescritivo>{props.descritivo}</StDescritivo>
       </StBase1>
       <StInscreverSe>Inscrever-se</StInscreverSe>
+      <StInscreverSe onClick={() => dispatch(push('/postagem/edicao'))}>Edição</StInscreverSe>
       <StPesquisa>
         <StPesquisaBaseInput pesquisa={pesquisa} >
           <input type='text' ref={refPesquisa} onChange={e => setPesquisa(e.target.value)} value={pesquisa} />
-          <i class="fas fa-search fa-5x" aria-hidden="true" onClick={() => refPesquisa.current.focus()} ></i>
+          <i className="fas fa-search fa-5x" aria-hidden="true" onClick={() => refPesquisa.current.focus()} ></i>
         </StPesquisaBaseInput>
       </StPesquisa>
     </StContainer>

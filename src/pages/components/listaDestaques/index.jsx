@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import BoxItem from "./boxItem";
 import { StContainer, StLista, StTitulo } from "./styles";
 
-const JsonData = require("../../../temp/listaDestaques.json");
+const JsonData = require("../../../temp/ListaPostagem.json");
 
 const Objeto = props => {
   const [dados, setDados] = useState([]);

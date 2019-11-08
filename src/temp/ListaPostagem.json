@@ -8,7 +8,7 @@
     "so-ios": true,
     "refs": ["https://github.com/elioglima/reactNativeGitHub"],
     "autor": "GoDevs",
-    "stepsCount": 1,
+    "stepsCount": 3,
     "tags": ["react", "javascript", "aplicativo", "ios", "android"],
     "steps": [
       [
@@ -24,6 +24,16 @@
           "id": 2,
           "titulo": "",
           "texto": "yarn add react-router \nyarn add connected-react-router \nyarn add history \nyarn add react-redux \nyarn add redux-saga \nyarn add js-cookie \nyarn add cpf_cnpj \nyarn add axios \nyarn add styled-components",
+          "videos": [],
+          "imagens": [],
+          "refs": []
+        }
+      ],
+      [
+        {
+          "id": 1,
+          "titulo": "Configuração do servidor",
+          "texto": "Para instalar o package digite yarn add ou npm i",
           "videos": [],
           "imagens": [],
           "refs": []
