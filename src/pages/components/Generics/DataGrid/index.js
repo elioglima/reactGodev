@@ -15,7 +15,7 @@ export default props => {
   const [dgColunas, setdgColunas] = useState([]);
   const [dgLinhas, setdgLinhas] = useState([]);
   const [widthAuto, setWidthAuto] = useState(true);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => setTheme(props.theme), [props.theme]);
   useEffect(() => {
@@ -30,11 +30,15 @@ export default props => {
     setdgColunas(props.dgColunas);
   }, [props.dgColunas]);
 
+  const onClickLinha = (r, c, e) => {
+    if (!props.onClickLinha) return;
+    props.onClickLinha(r, c, e);
+  };
+
   return (
     <BASE>
       <Caption>Lista de Usuários</Caption>
       <StTabela theme={props.theme}>
-
         <Titulo>
           {dgColunas.map(c => {
             if (c.hide == true) return;
@@ -44,8 +48,8 @@ export default props => {
                   widthAuto
                     ? 100 / dgColunas.length + "%"
                     : c.width
-                      ? c.width
-                      : 100 / dgColunas + "%"
+                    ? c.width
+                    : 100 / dgColunas + "%"
                 }
               >
                 {c.title}
@@ -60,12 +64,13 @@ export default props => {
                 {dgColunas.map(c => {
                   return (
                     <LinhasColuna
+                      onClick={e => onClickLinha(r, c, e)}
                       width={
                         widthAuto
                           ? 100 / dgColunas.length + "%"
                           : c.width
-                            ? c.width
-                            : 100 / dgColunas + "%"
+                          ? c.width
+                          : 100 / dgColunas + "%"
                       }
                     >
                       {r[c.name]}

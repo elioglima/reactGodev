@@ -8,14 +8,24 @@ export const BASE = styled.div`
 
 export const StTabela = styled.div`
   display: flex;
-  width: 100%;  
+  width: 100%;
   flex-direction: column;
 
-  background: ${props => props.theme ? props.theme == 'light' ? '##e5e5e5' : 'rgba(40, 40, 40)' : 'rgba(40, 40, 40)'}; 
-  box-shadow: 1px 2px 7px 1px  ${props => props.theme ? props.theme == 'light' ? '#000' : 'rgba(255,255,255, 0.2)' : 'rgba(255,255,255, 0.2)'};
+  background: ${props =>
+    props.theme
+      ? props.theme == "light"
+        ? "#e5e5e5"
+        : "rgba(40, 40, 40)"
+      : "rgba(40, 40, 40)"};
+  box-shadow: 1px 2px 7px 1px
+    ${props =>
+      props.theme
+        ? props.theme == "light"
+          ? "#000"
+          : "rgba(255,255,255, 0.2)"
+        : "rgba(255,255,255, 0.2)"};
   border-radius: 3px;
 `;
-
 
 export const Caption = styled.div`
   display: flex;
@@ -27,17 +37,18 @@ export const Caption = styled.div`
 export const Titulo = styled.div`
   display: flex;
   flex-direction: initial;
-  padding: 3px 0 3px 10px;
+  padding: 5px 0 5px 10px;
 `;
 
 export const TituloColuna = styled.div`
   display: flex;
   width: ${props => props.width};
+  padding: 5px 5px;
 `;
 
 export const BaseLinha = styled.div`
   display: flex;
-  background-color: #f4f4f5;
+  background-color: #fff;
   flex-direction: column;
 `;
 
@@ -45,11 +56,16 @@ export const Linhas = styled.div`
   display: flex;
   flex-direction: initial;
   padding: 5px 0 5px 10px;
+  cursor: pointer;
 
   :hover {
-
+    background: #deecff;
   }
 
+  :active {
+    background: #5893d4;
+    color: #fff;
+  }
 `;
 
 export const LinhasColuna = styled.div`

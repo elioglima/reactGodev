@@ -12,9 +12,11 @@ const Objeto = props => {
       <StBase
         paddingVertical={props.paddingVertical}
         paddingHorizontal={props.paddingHorizontal}
-        flexDirection={props.flexDirection ? props.flexDirection : 'row'}
-      >{props.children}</StBase>
-    </StContainer >
+        flexDirection={props.flexDirection ? props.flexDirection : "row"}
+      >
+        {props.children && props.children}
+      </StBase>
+    </StContainer>
   );
 };
 
