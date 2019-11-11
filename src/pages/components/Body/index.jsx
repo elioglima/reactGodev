@@ -9,8 +9,12 @@ const Objeto = props => {
       color={props.color ? props.color : null}
     >
       {props.banner && props.banner({ height: props.bannerHeight })}
-      <StBase paddingVertical={props.paddingVertical} paddingHorizontal={props.paddingHorizontal} >{props.children}</StBase>
-    </StContainer>
+      <StBase
+        paddingVertical={props.paddingVertical}
+        paddingHorizontal={props.paddingHorizontal}
+        flexDirection={props.flexDirection ? props.flexDirection : 'row'}
+      >{props.children}</StBase>
+    </StContainer >
   );
 };
 

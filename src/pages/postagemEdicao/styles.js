@@ -74,8 +74,7 @@ export const StRecomendadosTitulo = styled.div`
 `;
 
 export const StDataGrid = styled.div`
-  padding: 10px 10px;
   display: flex;
   flex-direction: column;
-  align-self: initial;
+  padding: 10px 5%;
 `;

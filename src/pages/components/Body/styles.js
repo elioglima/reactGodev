@@ -12,7 +12,8 @@ export const StContainer = styled.div`
 `;
 
 export const StBase = styled.div`
+  display:flex;
   padding: ${props => props.paddingVertical ? props.paddingVertical : '0'}  ${props => props.paddingHorizontal ? props.paddingHorizontal : '0'};
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: ${props => props.flexDirection ? props.flexDirection : 'row'};;
+  flex-wrap: wrap;  
 `;

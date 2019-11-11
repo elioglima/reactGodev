@@ -6,6 +6,17 @@ export const BASE = styled.div`
   flex-direction: column;
 `;
 
+export const StTabela = styled.div`
+  display: flex;
+  width: 100%;  
+  flex-direction: column;
+
+  background: ${props => props.theme ? props.theme == 'light' ? '##e5e5e5' : 'rgba(40, 40, 40)' : 'rgba(40, 40, 40)'}; 
+  box-shadow: 1px 2px 7px 1px  ${props => props.theme ? props.theme == 'light' ? '#000' : 'rgba(255,255,255, 0.2)' : 'rgba(255,255,255, 0.2)'};
+  border-radius: 3px;
+`;
+
+
 export const Caption = styled.div`
   display: flex;
   width: 100%;
@@ -33,10 +44,16 @@ export const BaseLinha = styled.div`
 export const Linhas = styled.div`
   display: flex;
   flex-direction: initial;
-  padding: 3px 0 3px 10px;
+  padding: 5px 0 5px 10px;
+
+  :hover {
+
+  }
+
 `;
 
 export const LinhasColuna = styled.div`
   display: flex;
   width: ${props => props.width};
+  padding: 5px 5px;
 `;

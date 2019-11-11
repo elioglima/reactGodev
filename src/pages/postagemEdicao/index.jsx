@@ -12,7 +12,7 @@ const DataGridColunas = [
   {
     name: "id",
     title: "Código",
-    width: "5%"
+    width: "10%"
   },
   {
     name: "title",
@@ -48,15 +48,20 @@ const Objeto = () => {
         descritivo="Programadores e Desenvolvedores Web, Desktop, Mobile, Games e TI BR"
       />
       <Banner height={10} />
-      <Body background={"#e5e5e5"} color={"#000"}>
-        {/* <StDataGrid> */}
-        <DataGrid
-          widthAuto={false}
-          dgColunas={DataGridColunas}
-          dgLinhas={listaPostagem}
+      <Body
+        background={"#e5e5e5"}
+        color={"#000"}
+        flexDirection={'column'}
+      >
+        <StDataGrid>
+          <DataGrid
+            theme={theme}
+            widthAuto={false}
+            dgColunas={DataGridColunas}
+            dgLinhas={listaPostagem}
           // onClickEditar={this.props.onClickEditar}
-        />
-        {/* </StDataGrid> */}
+          />
+        </StDataGrid>
       </Body>
       <Footer />
     </StContainer>
