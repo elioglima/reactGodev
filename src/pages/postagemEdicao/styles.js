@@ -10,72 +10,72 @@ export const StContainer = styled.div`
 export const StHistoria = styled.div`
   flex-direction: column;
   padding-top: 40px;
-  padding-bottom:10px;
+  padding-bottom: 10px;
 `;
 
 export const StHistoriaTitulo = styled.div`
-  font-size:1.5em;
-  font-weight:bold;  
+  font-size: 1.5em;
+  font-weight: bold;
 `;
 
 export const StHeader = styled.div`
   width: 100%;
-  flex-direction:row;
-  justify-content:space-between;
-  align-items:center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const StBase1 = styled.div`
-  flex-direction:row;
+  flex-direction: row;
   padding-top: 10px;
   padding-bottom: 10px;
 
-  & div {        
-    flex-direction:column;
-    
+  & div {
+    flex-direction: column;
+
     & span {
       padding: 2px 20px 2px 0px;
     }
 
-    &:first-child {              
+    &:first-child {
       & span {
         color: #233142;
       }
     }
 
-    &:last-child {              
+    &:last-child {
       & span {
         color: #005792;
       }
     }
   }
-
 `;
 
-export const StTituloImg = styled.div`
-  
-`;
+export const StTituloImg = styled.div``;
 
 export const StTexto = styled.div`
   margin-top: 10px;
   color: #233142;
   font-size: 1.3em;
-  text-align:justify;
+  text-align: justify;
 `;
 
-
-export const StBirthDate = styled.div`
-  
-`;
-
+export const StBirthDate = styled.div``;
 
 export const StRecomendados = styled.div`
-  flex-direction:column;
+  flex-direction: column;
   padding-top: 40px;
   padding-bottom: 40px;
 `;
 
 export const StRecomendadosTitulo = styled.div`
-  font-size:1.5em;
-  font-weight:bold;
+  font-size: 1.5em;
+  font-weight: bold;
+`;
+
+export const StDataGrid = styled.div`
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-self: initial;
 `;
