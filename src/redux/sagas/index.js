@@ -1,11 +1,12 @@
-import { all, takeLatest, takeEvery } from 'redux-saga/effects'
+import { all, takeLatest, takeEvery } from "redux-saga/effects";
 
-import { login } from './login'
-import { postagemEdicao } from './postagemEdicao'
+import { login } from "./login";
+import { postagemEdicao, postagemSelect } from "./postagemEdicao";
 
 export default function* rootSaga() {
-    yield all([
-        takeEvery('LOGIN', login),
-        takeEvery('POSTAGEM_EDICAO_LISTA', postagemEdicao),
-    ])
+  yield all([
+    takeEvery("LOGIN", login),
+    takeLatest("POSTAGEM_EDICAO_LISTA", postagemEdicao),
+    takeLatest("POSTAGEM_EDICAO_SELECTID", postagemSelect)
+  ]);
 }

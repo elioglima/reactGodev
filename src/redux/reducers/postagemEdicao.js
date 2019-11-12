@@ -3,7 +3,8 @@ const INITIAL_STATE = {
   loaded: true,
   error: false,
   Lista: [],
-  id: 0
+  id: 0,
+  Selecionado: {}
 };
 
 export default function PostagemEdicao(state = INITIAL_STATE, action) {
