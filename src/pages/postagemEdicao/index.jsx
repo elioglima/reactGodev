@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { StContainer } from "./styles";
 import ListaPostagem from "./components/listaPostagem";
 import EdicaoPostagem from "./components/edicaoPostagem";
+import TextAutoComplete from "../components/Generics/TextAutoComplete";
 
 const Objeto = () => {
   const theme = "light";
@@ -28,6 +29,17 @@ const Objeto = () => {
       <Body background={"#e5e5e5"} color={"#000"} flexDirection={"column"}>
         {idPostagem === 0 && <ListaPostagem theme={theme} />}
         {idPostagem > 0 && <EdicaoPostagem theme={theme} />}
+
+        <TextAutoComplete
+          dados={[
+            { value: "React-Js", title: "React-Js" },
+            { value: "React-Native", title: "React-Native" },
+            { value: "Node-Js", title: "Node-Js" },
+            { value: "Golang", title: "Golang" }
+          ]}
+          value={"React-Js"}
+          titulo={"Categoria"}
+        />
       </Body>
       <Footer />
     </StContainer>

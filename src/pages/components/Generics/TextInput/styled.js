@@ -3,7 +3,18 @@ import styled from "styled-components";
 export const StContainer = styled.div`
   display: flex;
   margin: 5px 5px 5px 5px;
+  flex-direction: column;
+
+  & span {
+    font-size: 1.2em;
+    font-family: "Roboto Slab", serif;
+    letter-spacing: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
   & input {
+    width: 96%;
     background: ${props =>
       props.theme
         ? props.theme == "light"

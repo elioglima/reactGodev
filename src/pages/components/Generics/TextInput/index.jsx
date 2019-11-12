@@ -17,6 +17,7 @@ const TextInput = props => {
 
   return (
     <StContainer theme={theme}>
+      {props.titulo && <span>{props.titulo}</span>}
       <input
         type="text"
         value={value}
@@ -28,6 +29,7 @@ const TextInput = props => {
 };
 
 TextInput.propTypes = {
+  titulo: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string
 };
