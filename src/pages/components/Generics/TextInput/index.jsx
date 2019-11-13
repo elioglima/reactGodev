@@ -16,7 +16,7 @@ const TextInput = props => {
   };
 
   return (
-    <StContainer theme={theme}>
+    <StContainer theme={theme} width={props.width}>
       {props.titulo && <span>{props.titulo}</span>}
       <input
         type="text"
@@ -32,6 +32,11 @@ TextInput.propTypes = {
   titulo: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string
+  // width: PropTypes.string
 };
+
+// TextInput.defaultProps = {
+//   width: '',
+// };
 
 export default TextInput;

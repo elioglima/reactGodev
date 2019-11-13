@@ -7,9 +7,5 @@ export const StContainer = styled.div`
 export const StLinha = styled.div`
   flex-direction: row;
   padding: 10px 5%;
-  justify-content: space-between;
-
-  & > div {
-    width: 100%;
-  }
+  /* justify-content: space-between; */
 `;

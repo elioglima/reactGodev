@@ -9,11 +9,17 @@ export const StContainer = styled.div`
 export const StBiografia = styled.div`
   flex-direction: column;
   padding: 10px 0;
-  & div div {
-    flex-direction: column;
-    padding: 10px 10px;
-    & span {
-      padding: 3px 3px;
+  & > div {
+    & > div {
+      flex-direction: column;
+      padding: 10px 10px;
+      & > span {
+        padding: 7px 3px;
+      }
+
+      & > div {
+        padding: 5px 5px;
+      }
     }
   }
 `;

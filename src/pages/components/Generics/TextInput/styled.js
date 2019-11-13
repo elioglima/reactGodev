@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const StContainer = styled.div`
   display: flex;
-  margin: 5px 5px 5px 5px;
+  margin: 0px 0px 0px 0px;
   flex-direction: column;
+  width: ${props => props.width && props.width};
 
   & span {
     font-size: 1.2em;
@@ -32,10 +33,10 @@ export const StContainer = styled.div`
     border-radius: 3px;
     border: none;
     outline: none;
-    padding: 5px 6px;
-    font-size: 1em;
+    padding: 2px 6px;
+    font-size: 0.9em;
     font-family: "Roboto Slab", serif;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     :focus {
       background: #ecfcff;
     }

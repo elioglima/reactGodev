@@ -7,6 +7,8 @@ import {
 } from "./styles";
 
 import StepCurrents from "./StepCurrents";
+import TextInput from "../../../../components/Generics/TextInput";
+import TextAutoComplete from "../../../../components/Generics/TextAutoComplete";
 
 const Biografia = props => {
   return (
@@ -23,8 +25,30 @@ const Biografia = props => {
           <span>Referências</span>
         </div>
         <div>
+          {/* editandoRegistro={props.editandoRegistro} */}
+          {/* inserindoRegistro={props.inserindoRegistro} */}
           <span>{props.registro.id}</span>
-          <span>{props.registro.title}</span>
+
+          {props.editandoRegistro || props.inserindoRegistro ? (
+            <TextInput value={props.registro.title} width={"100%"} />
+          ) : (
+            <span>{props.registro.title}</span>
+          )}
+
+          {props.editandoRegistro || props.inserindoRegistro ? (
+            <TextAutoComplete
+              dados={[
+                { value: "React-Js", title: "React-Js" },
+                { value: "React-Native", title: "React-Native" },
+                { value: "Node-Js", title: "Node-Js" },
+                { value: "Golang", title: "Golang" }
+              ]}
+              value={props.registro.category}
+            />
+          ) : (
+            <span>{props.registro.category}</span>
+          )}
+
           <span>{props.registro.category}</span>
           <span>{props.registro.autor}</span>
           <span>{props.registro.refs}</span>

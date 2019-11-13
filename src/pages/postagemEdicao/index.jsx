@@ -29,17 +29,6 @@ const Objeto = () => {
       <Body background={"#e5e5e5"} color={"#000"} flexDirection={"column"}>
         {idPostagem === 0 && <ListaPostagem theme={theme} />}
         {idPostagem > 0 && <EdicaoPostagem theme={theme} />}
-
-        <TextAutoComplete
-          dados={[
-            { value: "React-Js", title: "React-Js" },
-            { value: "React-Native", title: "React-Native" },
-            { value: "Node-Js", title: "Node-Js" },
-            { value: "Golang", title: "Golang" }
-          ]}
-          value={"React-"}
-          titulo={"Categoria"}
-        />
       </Body>
       <Footer />
     </StContainer>

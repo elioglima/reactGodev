@@ -9,9 +9,9 @@ const Objeto = props => {
   const [stepCount, setStepCount] = useState(0);
 
   useEffect(() => {
-    if (!props.dados) return
-    setStepCount(props.dados.steps || 0)
-    setRegistro(props.dados)
+    if (!props.dados) return;
+    setStepCount(props.dados.steps || 0);
+    setRegistro(props.dados);
   }, [props.dados]);
 
   const setStep = v => {
@@ -28,6 +28,8 @@ const Objeto = props => {
         stepCurr={stepCurr}
         setStep={setStep}
         stepCount={stepCount}
+        editandoRegistro={props.editandoRegistro}
+        inserindoRegistro={props.inserindoRegistro}
       />
       <Content
         {...props}
@@ -35,6 +37,8 @@ const Objeto = props => {
         stepCurr={stepCurr}
         setStep={setStep}
         stepCount={stepCount}
+        editandoRegistro={props.editandoRegistro}
+        inserindoRegistro={props.inserindoRegistro}
       />
     </StContainer>
   );

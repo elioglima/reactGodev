@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const StContainer = styled.div`
   position: relative;
   display: flex;
-  margin: 5px 5px 5px 5px;
+  margin: 0;
   flex-direction: column;
 
-  & span {
+  & > span {
     font-size: 1.2em;
     font-family: "Roboto Slab", serif;
     letter-spacing: 2px;
@@ -71,10 +71,10 @@ export const StAutoComplete = styled.div`
   z-index: 100;
   display: ${props => (props.openAutoComplete == true ? "block" : "none")};
   position: absolute;
-  top: 62px;
-  left: 0px;
+  top: 36px;
+  left: 5px;
   flex-direction: column;
-  width: 100%;
+  width: 97.5%;
 
   background: ${props =>
     props.theme

@@ -15,7 +15,11 @@ const Objeto = props => {
   return (
     <StContainer>
       <StLinha>
-        <TextInput value={postagemSelecionada.title} titulo={"Título"} />
+        <TextInput
+          value={postagemSelecionada.title}
+          titulo={"Título"}
+          width={"50%"}
+        />
         <TextAutoComplete
           dados={[
             { value: "React-Js", title: "React-Js" },
