@@ -23,9 +23,12 @@ export const StBase = styled.div`
   background: ${props =>
     props.theme
       ? props.theme == "light"
-        ? "#fff"
+        ? props.focus || props.openAutoComplete
+          ? "#ecfcff"
+          : "#fff"
         : "rgba(40, 40, 40)"
       : "rgba(40, 40, 40)"};
+
   box-shadow: 1px 2px 7px 1px
     ${props =>
       props.theme
@@ -41,6 +44,9 @@ export const StBase = styled.div`
   ${props => props.openAutoComplete && "border-bottom-right-radius: 0"};
 
   & input {
+    background: ${props =>
+      (props.focus || props.openAutoComplete) && "#ecfcff"};
+
     width: 100%;
     border: none;
     outline: none;
@@ -48,16 +54,16 @@ export const StBase = styled.div`
     font-size: 1em;
     font-family: "Roboto Slab", serif;
     letter-spacing: 2px;
-    &:focus {
-      /* background: #ecfcff; */
-    }
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
   }
 `;
 
 export const StIcone = styled.div`
   font-size: 1.1em;
   padding-top: 8px;
-  padding-right: 8px;
+  padding-right: 7px;
+  padding-left: 8px;
   cursor: pointer;
 `;
 

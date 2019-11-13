@@ -21,7 +21,7 @@ const TextInput = props => {
   const [value, setValue] = useState("");
   const [placeholder, setPlaceholder] = useState("");
   const [mouseEnterAutoComplete, setMouseEnterAutoComplete] = useState(false);
-  const [mouseLeavePesq, setMouseLeavePesq] = useState(false);
+  const [focus, setFocus] = useState(false);
   const itemsRef = useRef([]);
 
   useEffect(() => props.theme && setTheme(props.theme), [props.theme]);
@@ -48,7 +48,6 @@ const TextInput = props => {
     setOpenAutoComplete(dados.length > 0);
   };
 
-  const onFocus = e => {};
   const onKeyDown = e => {};
 
   const onClickIcone = e => {
@@ -97,6 +96,10 @@ const TextInput = props => {
     setValue(e.target.value);
   };
 
+  const onFocus = e => {
+    setFocus(true);
+  };
+
   const onMouseLeave = () => {
     // setTimeout(() => {
     //   openAutoComplete && setOpenAutoComplete(false);
@@ -104,6 +107,7 @@ const TextInput = props => {
   };
 
   const onBlur = () => {
+    setFocus(false);
     setTimeout(() => {
       let temFocus = false;
       for (let index = 0; index < dados.length; index++) {
@@ -119,7 +123,7 @@ const TextInput = props => {
     <StContainer theme={theme} onMouseLeave={onMouseLeave}>
       {props.titulo && <span>{props.titulo}</span>}
 
-      <StBase theme={theme} openAutoComplete={openAutoComplete}>
+      <StBase theme={theme} openAutoComplete={openAutoComplete} focus={focus}>
         <input
           type="text"
           ref={inputPesq}
