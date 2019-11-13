@@ -37,7 +37,7 @@ const Objeto = () => {
             { value: "Node-Js", title: "Node-Js" },
             { value: "Golang", title: "Golang" }
           ]}
-          value={"React-Js"}
+          value={"React-"}
           titulo={"Categoria"}
         />
       </Body>

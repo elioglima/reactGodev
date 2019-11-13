@@ -37,6 +37,9 @@ export const StBase = styled.div`
   border-radius: 3px;
   padding: 0px 5px;
 
+  ${props => props.openAutoComplete && "border-bottom-left-radius: 0"};
+  ${props => props.openAutoComplete && "border-bottom-right-radius: 0"};
+
   & input {
     width: 100%;
     border: none;
@@ -59,12 +62,13 @@ export const StIcone = styled.div`
 `;
 
 export const StAutoComplete = styled.div`
+  z-index: 100;
   display: ${props => (props.openAutoComplete == true ? "block" : "none")};
   position: absolute;
-  top: 61px;
+  top: 62px;
   left: 0px;
   flex-direction: column;
-  width: 96.9%;
+  width: 100%;
 
   background: ${props =>
     props.theme
@@ -81,6 +85,28 @@ export const StAutoComplete = styled.div`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   line-height: 30px;
+
+  & input {
+    width: 100%;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+
+    &:hover {
+      background: #eaf5ff;
+    }
+
+    &:focus {
+      background: #537ec5;
+      color: #fff;
+      outline: 0 none;
+    }
+
+    &::selection {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
 `;
 
 export const StLinha = styled.div`
