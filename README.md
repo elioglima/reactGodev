@@ -22,3 +22,7 @@ css:
     & span:nth-child(2)
 
     & span:first-child
+
+    yarn build
+    npm install -g serve
+    serve -s build
