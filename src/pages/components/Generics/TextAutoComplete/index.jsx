@@ -4,17 +4,18 @@ import {
   StContainer,
   StBase,
   StIcone,
+  StTitulo,
+  StPesquisa,
   StAutoComplete,
-  StLinha
+  StLinha,
+  StSelecaoAutoComplete
 } from "./styled";
-import { timeout } from "q";
 
 export const useMountEffect = fun => useEffect(fun, []);
 
 const TextInput = props => {
   const [theme, setTheme] = useState("light");
   const inputPesq = useRef();
-
   const [openAutoComplete, setOpenAutoComplete] = useState(false);
   const [dados, setDados] = useState("");
   const [baseDados, setBaseDados] = useState("");
@@ -120,11 +121,14 @@ const TextInput = props => {
   };
 
   return (
-    <StContainer theme={theme} onMouseLeave={onMouseLeave}>
-      {props.titulo && <span>{props.titulo}</span>}
+    <StContainer theme={theme} width={props.width} onMouseLeave={onMouseLeave}>
+      {props.titulo && <StTitulo>{props.titulo}</StTitulo>}
 
       <StBase theme={theme} openAutoComplete={openAutoComplete} focus={focus}>
-        <input
+        <StPesquisa
+          theme={theme}
+          openAutoComplete={openAutoComplete}
+          focus={focus}
           type="text"
           ref={inputPesq}
           value={value}
@@ -150,7 +154,7 @@ const TextInput = props => {
           dados.map((r, i) => {
             return (
               <StLinha>
-                <input
+                <StSelecaoAutoComplete
                   key={i}
                   ref={el => (itemsRef.current[i] = el)}
                   value={r.title}

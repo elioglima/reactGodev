@@ -10,7 +10,7 @@ import { StContainer } from "./styles";
 
 const Objeto = () => {
   const theme = "light";
-  const [editandoRegistro, setEditandoRegistro] = useState(false);
+  const [editandoRegistro, setEditandoRegistro] = useState(true);
   const [inserindoRegistro, setInserindoRegistro] = useState(false);
   const { dados } = useSelector(state => state.router.location.state || 0);
   const MenuRight = [

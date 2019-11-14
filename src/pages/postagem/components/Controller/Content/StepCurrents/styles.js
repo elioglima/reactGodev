@@ -7,11 +7,11 @@ export const StContainer = styled.div`
 
 export const StBase = styled.div`
   flex-direction: column;
-  padding: 10px 0;
+  padding: 20px 0 0 0;
 `;
 
 export const StTitulo = styled.div`
-  padding: 30px 10px 10px 0px;
+  padding: 0px 10px 10px 0px;
   font-size: 1.2em;
   font-weight: bold;
   font-family: "Roboto Slab", serif;

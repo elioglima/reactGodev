@@ -9,22 +9,29 @@ export const StContainer = styled.div`
 export const StBiografia = styled.div`
   flex-direction: column;
   padding: 10px 0;
-  & > div {
-    & > div {
-      flex-direction: column;
-      padding: 10px 10px;
-      & > span {
-        padding: 7px 3px;
-      }
+`;
 
-      & > div {
-        padding: 5px 5px;
-      }
-    }
-  }
+export const StLinha = styled.div`
+  width: 90%;
+  flex-direction: row;
+  padding: 3px 0;
+`;
+
+export const StTitulo = styled.div`
+  width: 12%;
+`;
+
+export const StDescr = styled.div`
+  width: 50%;
+  height: 26px;
+`;
+
+export const StDescNotEdicao = styled.span`
+  width: 100%;
 `;
 
 export const StDescriptions = styled.div`
+  width: 100%;
   padding: 10px 0px;
 `;
 

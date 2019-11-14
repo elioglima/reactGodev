@@ -31,6 +31,7 @@ const Objeto = props => {
         editandoRegistro={props.editandoRegistro}
         inserindoRegistro={props.inserindoRegistro}
       />
+
       <Content
         {...props}
         registro={registro}

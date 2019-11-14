@@ -16,7 +16,7 @@ export const StBotao = styled.div`
   ${props => props.ativo && "cursor: pointer;"};
   color: ${props => (props.ativo ? "#1b7fbd" : "#95adbe")};
 
-  & i {
+  & > i {
     font-size: 1em;
     margin-left: 5px;
     margin-right: 5px;
@@ -25,6 +25,10 @@ export const StBotao = styled.div`
   & span {
     padding: 0 0px;
     font-size: 1em;
+
+    &::selection {
+      background-color: rgba(0, 0, 0, 0) !important;
+    }
   }
 
   ${props =>

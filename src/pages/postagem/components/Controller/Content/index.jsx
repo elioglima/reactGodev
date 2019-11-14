@@ -3,11 +3,16 @@ import {
   StContainer,
   StBiografia,
   StDescriptions,
-  StIntroducao
+  StIntroducao,
+  StLinha,
+  StTitulo,
+  StDescr,
+  StDescNotEdicao
 } from "./styles";
 
 import StepCurrents from "./StepCurrents";
 import TextInput from "../../../../components/Generics/TextInput";
+import TextArea from "../../../../components/Generics/TextArea";
 import TextAutoComplete from "../../../../components/Generics/TextAutoComplete";
 
 const Biografia = props => {
@@ -16,27 +21,31 @@ const Biografia = props => {
       {props.registro.stepsCount === 1 && (
         <StIntroducao>Introdução</StIntroducao>
       )}
-      <div>
-        <div>
-          <span>Código</span>
-          <span>Titulo</span>
-          <span>Categoria</span>
-          <span>Autor</span>
-          <span>Referências</span>
-        </div>
-        <div>
-          {/* editandoRegistro={props.editandoRegistro} */}
-          {/* inserindoRegistro={props.inserindoRegistro} */}
-          <span>{props.registro.id}</span>
 
+      <StLinha>
+        <StTitulo>Código</StTitulo>
+        <StDescr>
+          <StDescNotEdicao>{props.registro.id}</StDescNotEdicao>
+        </StDescr>
+      </StLinha>
+
+      <StLinha>
+        <StTitulo>Titulo</StTitulo>
+        <StDescr>
           {props.editandoRegistro || props.inserindoRegistro ? (
             <TextInput value={props.registro.title} width={"100%"} />
           ) : (
-            <span>{props.registro.title}</span>
+            <StDescNotEdicao>{props.registro.title}</StDescNotEdicao>
           )}
+        </StDescr>
+      </StLinha>
 
+      <StLinha>
+        <StTitulo>Categoria</StTitulo>
+        <StDescr>
           {props.editandoRegistro || props.inserindoRegistro ? (
             <TextAutoComplete
+              width={"100%"}
               dados={[
                 { value: "React-Js", title: "React-Js" },
                 { value: "React-Native", title: "React-Native" },
@@ -46,15 +55,52 @@ const Biografia = props => {
               value={props.registro.category}
             />
           ) : (
-            <span>{props.registro.category}</span>
+            <StDescNotEdicao>{props.registro.category}</StDescNotEdicao>
           )}
+        </StDescr>
+      </StLinha>
 
-          <span>{props.registro.category}</span>
-          <span>{props.registro.autor}</span>
-          <span>{props.registro.refs}</span>
-        </div>
-      </div>
-      <StDescriptions>{props.registro.descriptions}</StDescriptions>
+      <StLinha>
+        <StTitulo>Autor</StTitulo>
+        <StDescr>
+          {props.editandoRegistro || props.inserindoRegistro ? (
+            <TextInput value={props.registro.autor} width={"100%"} />
+          ) : (
+            <StDescNotEdicao>{props.registro.autor}</StDescNotEdicao>
+          )}
+        </StDescr>
+      </StLinha>
+
+      <StLinha>
+        <StTitulo>GitHub</StTitulo>
+        <StDescr>
+          {props.editandoRegistro || props.inserindoRegistro ? (
+            <TextInput value={props.registro.github} width={"100%"} />
+          ) : (
+            <StDescNotEdicao>{props.registro.github}</StDescNotEdicao>
+          )}
+        </StDescr>
+      </StLinha>
+
+      <StLinha>
+        <StDescriptions>
+          {props.editandoRegistro || props.inserindoRegistro ? (
+            <TextArea
+              value={props.registro.descriptions}
+              width={"100%"}
+              rows={
+                props.registro.descriptions &&
+                props.registro.descriptions.split("\n").length
+              }
+              onValue={value => {
+                props.registro.descriptions = value;
+              }}
+            />
+          ) : (
+            <StDescNotEdicao>{props.registro.descriptions}</StDescNotEdicao>
+          )}
+        </StDescriptions>
+      </StLinha>
     </StBiografia>
   );
 };

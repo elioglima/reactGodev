@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StContainer, StTitulo, StTexto, StBase } from "./styles";
+import TextArea from "../../../../../components/Generics/TextArea";
+import ToolsEdicao from "./ToolsEdicao";
 
 const Objeto = props => {
   const [registroStep, setRegistroStep] = useState([]);
@@ -9,19 +11,23 @@ const Objeto = props => {
     let registro = props.registro.steps;
     if (registro.lenght < props.registro.stepsCount) return;
     let index = props.stepCurr - 1;
-    console.log(registro, index)
     setRegistroStep(registro[index]);
   }, [props.stepCurr]);
 
   const TextoWrap = texto => {
-    return texto.split("\n").map(i => {
-      return <StTexto>{i}</StTexto>;
-    });
+    return props.editandoRegistro || props.inserindoRegistro ? (
+      <TextArea value={texto} width={"90%"} rows={texto.split("\n").length} />
+    ) : (
+      texto.split("\n").map(i => {
+        return <StTexto>{i}</StTexto>;
+      })
+    );
   };
 
   if (!registroStep) return <div />;
   return (
     <StContainer {...props}>
+      {(props.editandoRegistro || props.inserindoRegistro) && <ToolsEdicao />}
       {registroStep.map(reg => {
         return (
           <StBase>

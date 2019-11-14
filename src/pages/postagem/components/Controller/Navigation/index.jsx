@@ -15,13 +15,24 @@ const Objeto = props => {
         <StTitulo>{props.registro.title}</StTitulo>
         <StTitulo>{props.registro.category}</StTitulo>
       </StContents>
-      <StBotao
-        onClick={onSendStep}
-        ativo={props.stepCurr < props.registro.stepsCount}
-      >
-        <span>Proximo</span>
-        <i className="fas fa-chevron-right" aria-hidden="true"></i>
-      </StBotao>
+
+      {props.stepCurr >= props.registro.stepsCount - 1 &&
+      (props.editandoRegistro || props.inserindoRegistro) ? (
+        <StBotao ativo={true}>
+          <span>Adicionar</span>
+          <i className="fas fa-chevron-right" aria-hidden="true"></i>
+        </StBotao>
+      ) : (
+        <StBotao
+          onClick={e => {
+            props.stepCurr < props.registro.stepsCount - 1 && onSendStep(e);
+          }}
+          ativo={props.stepCurr < props.registro.stepsCount}
+        >
+          <span>Proximo</span>
+          <i className="fas fa-chevron-right" aria-hidden="true"></i>
+        </StBotao>
+      )}
     </StContainer>
   );
 };

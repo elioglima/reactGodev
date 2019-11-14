@@ -16,7 +16,7 @@ export const StTitulo = styled.div`
   padding-bottom: 3px !important;
 `;
 
-export const StPesquisa = styled.input`
+export const StPesquisa = styled.textarea`
   width: 98.5% !important;
   background: ${props =>
     props.theme
