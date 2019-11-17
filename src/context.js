@@ -1,4 +1,8 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
 export const AppContext = createContext({
-})
+  openModalLogin: false,
+  toggleOpenModalLogin: () => {},
+  loadingMessage: "",
+  changeLoadingMessage: () => {}
+});

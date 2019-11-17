@@ -1,11 +1,16 @@
 import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
 
-import Login from './login'
-import PostagemEdicao from './postagemEdicao'
+import modais from "./modais";
+import reducerLista from "./postagem/reducerLista";
+import reduceSalvar from "./postagem/reduceSalvar";
+import reduceMetricas from "./metricas";
 
-export const reducers = (history) => combineReducers({
+export const reducers = history =>
+  combineReducers({
     router: connectRouter(history),
-    Login,
-    PostagemEdicao,
-})
+    modais,
+    postagens: reducerLista,
+    postagemSalvar: reduceSalvar,
+    metrics: reduceMetricas
+  });

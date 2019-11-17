@@ -12,8 +12,13 @@ export const StContainer = styled.div`
 `;
 
 export const StBase = styled.div`
-  display:flex;
-  padding: ${props => props.paddingVertical ? props.paddingVertical : '0'}  ${props => props.paddingHorizontal ? props.paddingHorizontal : '0'};
-  flex-direction: ${props => props.flexDirection ? props.flexDirection : 'row'};;
-  flex-wrap: wrap;  
+  display: flex;
+  padding: ${props => (props.paddingVertical ? props.paddingVertical : "0")}
+    ${props => (props.paddingHorizontal ? props.paddingHorizontal : "0")};
+  flex-direction: ${props =>
+    props.flexDirection ? props.flexDirection : "row"};
+  flex-wrap: wrap;
+  ${props => props.alignContent && "align-content:" + props.alignContent};
+  ${props => props.height && "height:" + props.height};
+  ${props => props.justifyContent && "justify-content:" + props.justifyContent};
 `;

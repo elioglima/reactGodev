@@ -1,11 +1,12 @@
-import request from "../request";
-
-const retorno = (msg, err = true, data = {}) => ({ msg, err, data });
+import { exePost } from "../tools";
+import { retornoSucesso, retornoErro } from "../generics";
 
 export default async params => {
-  const json = require("../../temp/ListaPostagem.json");
-  const dados = json.filter(field => field.id == params.id);
+  const { retornoMetodo } = await exePost("postagem/id", params);
+  const { err, msg, obj } = retornoMetodo;
+
+  if (err) return retornoErro(msg);
 
   // retorna os dados como sucesso
-  return retorno("Sucesso", false, dados);
+  return retornoSucesso("Sucesso", { registro: obj.data.registro });
 };

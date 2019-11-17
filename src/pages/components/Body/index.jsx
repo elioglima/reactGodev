@@ -13,6 +13,9 @@ const Objeto = props => {
         paddingVertical={props.paddingVertical}
         paddingHorizontal={props.paddingHorizontal}
         flexDirection={props.flexDirection ? props.flexDirection : "row"}
+        alignContent={props.alignContent}
+        height={props.height}
+        justifyContent={props.justifyContent}
       >
         {props.children && props.children}
       </StBase>

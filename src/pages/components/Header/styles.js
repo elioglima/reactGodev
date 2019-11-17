@@ -5,7 +5,7 @@ export const StContainer = styled.div`
   flex-direction: row;
   padding: 20px 5%;
   justify-content: space-between;
-  margin-bottom: 10px;
+  background: rgba(20, 20, 20);
 `;
 
 export const StTitulo = styled.div`
@@ -49,6 +49,8 @@ export const StInscreverSe = styled.div`
   letter-spacing: 1px;
   align-items: center;
   text-transform: uppercase;
+  margin: 0;
+
   cursor: pointer;
   &::selection {
     background-color: rgba(0, 0, 0, 0) !important;

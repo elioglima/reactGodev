@@ -23,8 +23,12 @@ const Objeto = props => {
         <StDescritivo>{props.descritivo}</StDescritivo>
       </StBase1>
       {props.MenuRight &&
-        props.MenuRight.map(r => {
-          return <StInscreverSe onClick={r.onClick}>{r.title}</StInscreverSe>;
+        props.MenuRight.map((r, i) => {
+          return (
+            <StInscreverSe key={"StInscreverSeHeader" + i} onClick={r.onClick}>
+              {r.title}
+            </StInscreverSe>
+          );
         })}
       {/* <StInscreverSe onClick={() => dispatch(push('/postagem/edicao'))}>Edição</StInscreverSe> */}
       <StPesquisa>

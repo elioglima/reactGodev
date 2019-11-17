@@ -31,8 +31,14 @@ const TextInput = props => {
     setDados(props.dados);
   }, [props.dados]);
 
-  useEffect(() => setValue(props.value), [props.value]);
+  useEffect(() => {
+    if (!props.value) return;
+    setValue(props.value);
+  }, [props.value]);
+
   useEffect(() => setPlaceholder(props.placeholder), [props.placeholder]);
+  useEffect(() => props.onValue && props.onValue(value), [value]);
+
   const setFiltro = valueTemp => {
     setDados(
       baseDados.filter(
@@ -153,9 +159,9 @@ const TextInput = props => {
         {dados &&
           dados.map((r, i) => {
             return (
-              <StLinha>
+              <StLinha key={"StLinhaTextAutoComplete" + i}>
                 <StSelecaoAutoComplete
-                  key={i}
+                  key={"StSelecaoAutoComplete" + i}
                   ref={el => (itemsRef.current[i] = el)}
                   value={r.title}
                   onKeyDown={e => onKeyDownInputPesq(e, dados.length, i, r)}

@@ -8,22 +8,27 @@ const TextInput = props => {
   const [placeholder, setPlaceholder] = useState("");
 
   useEffect(() => props.theme && setTheme(props.theme), [props.theme]);
-  useEffect(() => setValue(props.value), [props.value]);
-  useEffect(() => setValue(props.value), [props.value]);
+  useEffect(() => {
+    if (!props.value) return;
+    if (props.value !== value) setValue(props.value);
+  }, [props.value]);
+
   useEffect(() => setPlaceholder(props.placeholder), [props.placeholder]);
+
   const onChange = e => {
     setValue(e.target.value);
+    props.onValue && props.onValue(value);
   };
 
   return (
     <StContainer theme={theme} width={props.width}>
       {props.titulo && <StTitulo theme={theme}>{props.titulo}</StTitulo>}
       <StPesquisa
-        theme={theme}
         type="text"
-        value={value}
+        value={value ? value : ""}
         placeholder={placeholder}
         onChange={onChange}
+        theme={theme}
       />
     </StContainer>
   );

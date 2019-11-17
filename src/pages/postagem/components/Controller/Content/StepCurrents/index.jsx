@@ -4,35 +4,43 @@ import TextArea from "../../../../../components/Generics/TextArea";
 import ToolsEdicao from "./ToolsEdicao";
 
 const Objeto = props => {
-  const [registroStep, setRegistroStep] = useState([]);
-
-  useEffect(() => {
-    if (props.stepCurr <= 0) return;
-    let registro = props.registro.steps;
-    if (registro.lenght < props.registro.stepsCount) return;
-    let index = props.stepCurr - 1;
-    setRegistroStep(registro[index]);
-  }, [props.stepCurr]);
-
   const TextoWrap = texto => {
-    return props.editandoRegistro || props.inserindoRegistro ? (
-      <TextArea value={texto} width={"90%"} rows={texto.split("\n").length} />
-    ) : (
-      texto.split("\n").map(i => {
-        return <StTexto>{i}</StTexto>;
-      })
-    );
+    return texto.split("\n").map(i => {
+      return <StTexto>{i}</StTexto>;
+    });
   };
 
-  if (!registroStep) return <div />;
+  if (!props.registro.steps) return <div />;
   return (
     <StContainer {...props}>
       {(props.editandoRegistro || props.inserindoRegistro) && <ToolsEdicao />}
-      {registroStep.map(reg => {
+      {props.registro.steps[props.stepCurr - 1].map((reg, index) => {
+        console.log(index, props.registro.steps[props.stepCurr - 1][index]);
         return (
-          <StBase>
-            {reg.titulo && <StTitulo>{reg.titulo}</StTitulo>}
-            {TextoWrap(reg.texto)}
+          <StBase key={"StBase" + index}>
+            {props.registro.steps[props.stepCurr - 1][index].titulo && (
+              <StTitulo key={"StBaseTitulo" + index}>
+                {props.registro.steps[props.stepCurr - 1][index].titulo}
+              </StTitulo>
+            )}
+
+            {props.editandoRegistro || props.inserindoRegistro ? (
+              <TextArea
+                key={"StBaseTextArea" + index}
+                value={props.registro.steps[props.stepCurr - 1][index].texto}
+                width={"90%"}
+                rows={
+                  props.registro.steps[props.stepCurr - 1][index].texto.split(
+                    "\n"
+                  ).length
+                }
+                onValue={value => {
+                  props.registro.steps[props.stepCurr - 1][index].texto = value;
+                }}
+              />
+            ) : (
+              TextoWrap(props.registro.steps[props.stepCurr - 1][index].texto)
+            )}
           </StBase>
         );
       })}
