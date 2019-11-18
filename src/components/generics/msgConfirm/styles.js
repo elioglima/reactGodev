@@ -5,10 +5,10 @@ export const StContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  & span {
+  & > span {
     margin-top: 40px;
   }
-  & p {
+  & > p {
     text-align: center;
   }
 `;

@@ -1,19 +1,12 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { getTheme } from "../../../assets/theme";
 const theme = localStorage.getItem("theme");
 
 export const ButtonPrimary = styled.a`
-  background: ${props =>
-    props.color
-      ? getTheme(theme).botaoClaro[props.color]
-        ? getTheme(theme).botaoClaro[props.color]
-        : getTheme(theme).botaoClaro.backgroud
-      : getTheme(theme).botaoClaro.backgroud};
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
   border: none;
   border-radius: 30px;
   color: white;
-  cursor: pointer;
   display: flex;
   font-size: 20px;
   height: fit-content;
@@ -23,6 +16,17 @@ export const ButtonPrimary = styled.a`
   text-decoration: none;
   user-select: none;
   width: fit-content;
+
+  background: ${props =>
+    props.modoClaro === true
+      ? getTheme(theme).claro.botao[props.modo].background
+      : getTheme(theme).escuro.botao[props.modo].background};
+
+  box-shadow: 2px 2px 4px
+    ${props =>
+      props.modoClaro === true
+        ? getTheme(theme).claro.botao[props.modo].boxShadow
+        : getTheme(theme).escuro.botao[props.modo].boxShadow};
 
   @media (max-width: 568px) {
     padding: 15px 30px;
@@ -36,18 +40,7 @@ export const ButtonPrimary = styled.a`
     cursor: pointer;
   }
 
-  ${props =>
-    props.cta &&
-    css`
-      color: #da291c;
-      font-weight: bolder;
-
-      &:hover {
-        color: #fff;
-      }
-    `}
-
-  & img {
+  & > img {
     margin-left: 10px;
 
     @media (min-width: 568px) {
@@ -56,7 +49,7 @@ export const ButtonPrimary = styled.a`
   }
 
   &.modalOpen {
-    & img {
+    & > img {
       transform: rotate(-180deg);
       transition: all 1s ease-out;
       -webkit-transition: all 1s ease-out;
@@ -64,7 +57,7 @@ export const ButtonPrimary = styled.a`
   }
 
   &.modalClosed {
-    & img {
+    & > img {
       transform: rotate(0deg);
       transition: all 1s ease-out;
       -webkit-transition: all 1s ease-out;

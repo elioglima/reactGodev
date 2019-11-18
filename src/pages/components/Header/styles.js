@@ -56,9 +56,10 @@ export const StBase1 = styled.div`
 export const StInscreverSe = styled.div`
   display: flex;
   color: #3dd1ec;
-  font-family: "Amaranth", sans-serif;
+  font-family: "Roboto Slab";
+  font-weight: 600;
   font-size: 15px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   align-items: center;
   text-transform: uppercase;
   margin: 0;

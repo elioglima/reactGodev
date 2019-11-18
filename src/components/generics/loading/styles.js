@@ -19,6 +19,16 @@ export const LoadingBox = styled.div`
   justify-content: center;
   width: 100%;
 
+  animation: efeitoBackground 1s;
+  @keyframes efeitoBackground {
+    0% {
+      background: rgba(0, 0, 0, 0);
+    }
+    100% {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+
   @media (max-width: 568px) {
     flex-direction: column;
   }

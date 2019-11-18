@@ -4,6 +4,7 @@ import { reducers } from "./reducers";
 import sagas from "./sagas";
 import { routerMiddleware } from "connected-react-router";
 import createSagaMiddleware from "redux-saga";
+import Cookies from "js-cookie";
 
 export const history = createBrowserHistory();
 const middlewares = [];
@@ -12,7 +13,10 @@ middlewares.push(sagaMiddleware);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const sessionStart = () => {};
+const sessionStart = () => {
+  const theme = Cookies.get("theme");
+  localStorage.setItem("theme", theme ? theme : "dark");
+};
 
 const store = createStore(
   reducers(history),

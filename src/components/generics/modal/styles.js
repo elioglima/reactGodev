@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import { getTheme } from "../../../assets/theme";
+const theme = localStorage.getItem("theme");
 
 export const ModalBox = styled.div`
   align-items: center;
   background: rgba(0, 0, 0, 0.8);
+
   display: flex;
   font-family: sans-serif;
   height: 100vh;
@@ -11,12 +14,22 @@ export const ModalBox = styled.div`
   top: 0;
   width: 100%;
   z-index: 2;
+
+  animation: efeitoBackground 1s;
+  @keyframes efeitoBackground {
+    0% {
+      background: rgba(0, 0, 0, 0);
+    }
+    100% {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
 `;
 
 export const Box = styled.div`
   background: white;
-  border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
   contain: content;
   display: flex;
   flex-direction: column;
@@ -56,7 +69,11 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.div`
-  color: white;
+  color: ${props =>
+    props.modoClaro === true
+      ? getTheme(theme).claro.modal.titulo.color
+      : getTheme(theme).escuro.modal.titulo.color};
+
   font-size: 24px;
   margin: auto 0;
   padding: 30px 51px;

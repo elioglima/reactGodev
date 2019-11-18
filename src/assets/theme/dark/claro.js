@@ -9,12 +9,21 @@ export default {
   },
 
   botao: {
-    sucesso: {
-      background: "#64b2cd",
+    default: {
+      background: "rgba(255,255,255, 0.2)",
+      boxShadow: "rgba(255,255,255, 0.2)",
       color: "#fff"
     },
+
+    sucesso: {
+      background: "#64b2cd",
+      boxShadow: "rgba(0,0,0, 0.3)",
+      color: "#fff"
+    },
+
     cancelar: {
       background: "#a5a5a5",
+      boxShadow: "rgba(0,0,0, 0.3)",
       color: "#fff"
     }
   },
@@ -57,6 +66,13 @@ export default {
     color: "#000",
     focus: {
       background: "#ecfcff"
+    }
+  },
+  modal: {
+    background: "rgba(255,255,255, 0.2)",
+    boxShadow: "rgba(255,255,255, 0.2)",
+    titulo: {
+      color: "#ecfcff"
     }
   }
 };

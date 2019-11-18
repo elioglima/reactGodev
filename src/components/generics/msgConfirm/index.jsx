@@ -10,7 +10,8 @@ const MsgConfirm = () => {
   const dispatch = useDispatch();
   const theme = useSelector(state => state.metrics.theme, "loght");
   const data = useSelector(state => state.modais[idModal], []);
-  const { tryAgain, tryAgainParams, retorno, descNoOk, descOK } = data || {};
+  const { tryAgain, tryAgainParams, retorno, descNoOk, descOK, title } =
+    data || {};
   const [msgTela, setMsgTela] = useState(
     <p>Parece que houve um erro, nenhuma msg informada.</p>
   );
@@ -32,13 +33,14 @@ const MsgConfirm = () => {
       <StRetorno>{msgTela}</StRetorno>
       <StBaseBotoes>
         <Button
-          theme={theme}
-          color={"not"}
+          modo={"cancelar"}
           text={descNoOk ? descNoOk : "Não"}
-          onClick={() => dispatch(closeModal(idModal))}
+          onClick={() => {
+            dispatch(closeModal(idModal));
+          }}
         />
         <Button
-          theme={theme}
+          modo={"sucesso"}
           color={"ok"}
           text={descOK ? descOK : "Sim"}
           onClick={onClick}
@@ -48,7 +50,11 @@ const MsgConfirm = () => {
   );
 
   return (
-    <Modal idModal={idModal} title="Erro ao recuperar dados" body={body} />
+    <Modal
+      idModal={idModal}
+      title={title || "Confirmação do Sistema"}
+      body={body}
+    />
   );
 };
 

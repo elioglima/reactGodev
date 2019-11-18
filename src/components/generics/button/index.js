@@ -1,25 +1,15 @@
 import React from "react";
 import { ButtonPrimary } from "./styles";
-
-// import { showModal } from '../../../redux/modal'
-
-const Button = ({
-  theme,
-  text,
-  href,
-  handleClickModal,
-  showModalNav,
-  modal,
-  icon,
-  ...rest
-}) => {
+const Button = props => {
   return (
-    <ButtonPrimary theme={theme} className="button" {...rest} href={href}>
-      {text} {icon && <img src={icon} alt="icon" />}
+    <ButtonPrimary
+      modo={props.modo || "default"}
+      modoClaro={props.modoClaro || true}
+      onClick={props.onClick}
+    >
+      {props.text} {props.icon && <img src={props.icon} alt="icon" />}
     </ButtonPrimary>
   );
 };
 
-// const mapDispatchToProps = dipatch => ({ showModalNav: () => dipatch(showModal()) })
-// const mapStateToProps = ({ modal }) => ({ modal })
 export default Button;

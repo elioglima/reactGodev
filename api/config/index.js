@@ -14,7 +14,7 @@ module.exports = {
   SaveAllLog: process.env.SAVE_ALL_LOG == "true" || false,
   Trace: process.env.TRACE == "true" || false,
   db: {
-    uri: process.env.REACT_APP_URL_MONGO || "mongodb://localhost:27017/GoDev",
+    uri: process.env.URL_MONGO || "mongodb://localhost:27017/GoDev",
     options: {
       useNewUrlParser: true
     }
