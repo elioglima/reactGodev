@@ -5,6 +5,8 @@ const thmLight = {
   colorNivel2: "#64b2cd",
   colorNovel3: "#000",
   botaoClaro: {
+    ok: "#64b2cd",
+    not: "#a5a5a5",
     background: "#64b2cd",
     color: "#fff"
   }
@@ -17,6 +19,8 @@ const thmDark = {
   colorNivel2: "#64b2cd",
   colorNivel3: "#ccc",
   botaoClaro: {
+    ok: "#64b2cd",
+    not: "#a5a5a5",
     background: "#64b2cd",
     color: "#fff"
   }

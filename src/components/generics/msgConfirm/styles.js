@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const StContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -11,4 +11,14 @@ export const Container = styled.div`
   & p {
     text-align: center;
   }
+`;
+
+export const StRetorno = styled.div`
+  font-size: 1.5em;
+`;
+
+export const StBaseBotoes = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;

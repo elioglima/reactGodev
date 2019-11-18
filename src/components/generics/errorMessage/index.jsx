@@ -8,6 +8,7 @@ import { closeModal } from "../../../redux/actions/modais";
 const ErrorMessage = () => {
   const idModal = "errorMessage";
   const dispatch = useDispatch();
+  const theme = useSelector(state => state.metrics.theme, "loght");
   const data = useSelector(state => state.modais[idModal], []);
   const { tryAgain, tryAgainParams, retorno } = data || {};
   const [msgErro, setMsgErro] = useState(
@@ -33,7 +34,12 @@ const ErrorMessage = () => {
     <Container>
       <span>Ops!</span>
       {msgErro}
-      <Button text="Tentar novamente" href="/" onClick={onClick} />
+      <Button
+        theme={theme}
+        text="Tentar novamente"
+        href="/"
+        onClick={onClick}
+      />
     </Container>
   );
 

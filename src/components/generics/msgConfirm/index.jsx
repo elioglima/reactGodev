@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../button";
-import { Container } from "./styles";
 import Modal from "../modal";
 import { closeModal } from "../../../redux/actions/modais";
+import { StContainer, StRetorno, StBaseBotoes } from "./styles";
 
 const MsgConfirm = () => {
   const idModal = "MsgConfirm";
   const dispatch = useDispatch();
+  const theme = useSelector(state => state.metrics.theme, "loght");
   const data = useSelector(state => state.modais[idModal], []);
-  const { tryAgain, tryAgainParams, retorno } = data || {};
-  const [msgErro, setMsgErro] = useState(
-    <p>
-      Parece que houve um erro ao recuperar os dados. <br /> Tente novamente
-      mais tarde.
-    </p>
+  const { tryAgain, tryAgainParams, retorno, descNoOk, descOK } = data || {};
+  const [msgTela, setMsgTela] = useState(
+    <p>Parece que houve um erro, nenhuma msg informada.</p>
   );
 
   useEffect(() => {
-    if (retorno) setMsgErro(<p>{retorno}</p>);
+    if (retorno) setMsgTela(<p>{retorno}</p>);
   }, [retorno]);
 
   const onClick = e => {
@@ -30,11 +28,23 @@ const MsgConfirm = () => {
   };
 
   let body = (
-    <Container>
-      <span>Ops!</span>
-      {msgErro}
-      <Button text="Tentar novamente" href="/" onClick={onClick} />
-    </Container>
+    <StContainer>
+      <StRetorno>{msgTela}</StRetorno>
+      <StBaseBotoes>
+        <Button
+          theme={theme}
+          color={"not"}
+          text={descNoOk ? descNoOk : "Não"}
+          onClick={() => dispatch(closeModal(idModal))}
+        />
+        <Button
+          theme={theme}
+          color={"ok"}
+          text={descOK ? descOK : "Sim"}
+          onClick={onClick}
+        />
+      </StBaseBotoes>
+    </StContainer>
   );
 
   return (

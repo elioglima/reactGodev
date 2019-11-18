@@ -37,7 +37,22 @@ const Objeto = () => {
     {
       title: editandoRegistro ? "Cancelar" : "Escrever",
       onClick: () => {
-        setEditandoRegistro(!editandoRegistro);
+        if (editandoRegistro) {
+          dispatch(
+            openModal("MsgConfirm", {
+              retorno: "Deseja cancelar as alterações?",
+              descOK: "Sim, eu quero",
+              tryAgain: params => {
+                setEditandoRegistro(!editandoRegistro);
+              },
+              tryAgainParams: {
+                registro,
+                editandoRegistro,
+                inserindoRegistro
+              }
+            })
+          );
+        } else setEditandoRegistro(!editandoRegistro);
       }
     },
     {
@@ -45,8 +60,9 @@ const Objeto = () => {
       onClick: () => {
         if (editandoRegistro) {
           dispatch(
-            openModal("errorMessage", {
+            openModal("MsgConfirm", {
               retorno: "Deseja salvar as alterações?",
+              descOK: "Sim, eu quero",
               tryAgain: params => {
                 dispatch(postagemSalvar(params));
                 setEditandoRegistro(!editandoRegistro);

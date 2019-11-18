@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components";
 import { getTheme } from "../../../assets/theme";
 export const ButtonPrimary = styled.a`
-  background: ${props => getTheme(props.theme).botaoClaro.background};
+  background: ${props =>
+    props.color
+      ? getTheme(props.theme).botaoClaro[props.color]
+        ? getTheme(props.theme).botaoClaro[props.color]
+        : getTheme(props.theme).botaoClaro.backgroud
+      : getTheme(props.theme).botaoClaro.backgroud};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 30px;
@@ -11,7 +16,7 @@ export const ButtonPrimary = styled.a`
   font-size: 20px;
   height: fit-content;
   justify-content: center;
-  margin: auto 0;
+  margin: auto 10px !important;
   padding: 15px 40px;
   text-decoration: none;
   user-select: none;
