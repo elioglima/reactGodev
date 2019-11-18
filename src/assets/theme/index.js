@@ -1,34 +1,6 @@
-const thmLight = {
-  backgroundPrimary: "#e5e5e5",
-  boxShadowPrimary: "#000",
-  colorNivel1: "#a5a5a5",
-  colorNivel2: "#64b2cd",
-  colorNovel3: "#000",
-  botaoClaro: {
-    ok: "#64b2cd",
-    not: "#a5a5a5",
-    background: "#64b2cd",
-    color: "#fff"
-  }
-};
-
-const thmDark = {
-  backgroudPrimary: "rgba(40, 40, 40)",
-  boxShadowPrimary: "rgba(255,255,255, 0.2)",
-  colorNivel1: "#a5a5a5",
-  colorNivel2: "#64b2cd",
-  colorNivel3: "#ccc",
-  botaoClaro: {
-    ok: "#64b2cd",
-    not: "#a5a5a5",
-    background: "#64b2cd",
-    color: "#fff"
-  }
-};
-
+import dark from "./dark";
 const Theme = [];
-Theme["light"] = thmLight;
-Theme["dark"] = thmDark;
+Theme["dark"] = dark;
 
 export const getTheme = params => {
   let tema = params ? params : "light";

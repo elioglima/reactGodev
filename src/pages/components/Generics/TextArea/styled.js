@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { getTheme } from "../../../../assets/theme";
+const theme = localStorage.getItem("theme");
 
 export const StContainer = styled.div`
   display: flex !important;
@@ -18,20 +20,6 @@ export const StTitulo = styled.div`
 
 export const StPesquisa = styled.textarea`
   width: 98.5% !important;
-  background: ${props =>
-    props.theme
-      ? props.theme == "light"
-        ? "#fff"
-        : "rgba(40, 40, 40)"
-      : "rgba(40, 40, 40)"};
-  box-shadow: 1px 2px 7px 1px
-    ${props =>
-      props.theme
-        ? props.theme == "light"
-          ? "#000"
-          : "rgba(255,255,255, 0.2)"
-        : "rgba(255,255,255, 0.2)"} !important ;
-
   border-radius: 3px !important;
   border: none !important;
   outline: none !important;
@@ -43,4 +31,19 @@ export const StPesquisa = styled.textarea`
   :focus {
     background: #ecfcff !important;
   }
+
+  background: ${props =>
+    props.modoClaro === true
+      ? props.focus
+        ? getTheme(theme).claro.textArea.focus.background
+        : getTheme(theme).claro.textArea.background
+      : getTheme(theme).escuro.textArea.background + "!important"};
+
+  box-shadow: 1px 2px 7px 1px
+    ${props =>
+      props.modoClaro === true
+        ? props.focus
+          ? getTheme(theme).claro.textArea.focus.boxShadow
+          : getTheme(theme).claro.textArea.boxShadow
+        : getTheme(theme).escuro.textArea.boxShadow + "!important"};
 `;

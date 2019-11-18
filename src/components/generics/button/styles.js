@@ -1,12 +1,14 @@
 import styled, { css } from "styled-components";
 import { getTheme } from "../../../assets/theme";
+const theme = localStorage.getItem("theme");
+
 export const ButtonPrimary = styled.a`
   background: ${props =>
     props.color
-      ? getTheme(props.theme).botaoClaro[props.color]
-        ? getTheme(props.theme).botaoClaro[props.color]
-        : getTheme(props.theme).botaoClaro.backgroud
-      : getTheme(props.theme).botaoClaro.backgroud};
+      ? getTheme(theme).botaoClaro[props.color]
+        ? getTheme(theme).botaoClaro[props.color]
+        : getTheme(theme).botaoClaro.backgroud
+      : getTheme(theme).botaoClaro.backgroud};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   border: none;
   border-radius: 30px;

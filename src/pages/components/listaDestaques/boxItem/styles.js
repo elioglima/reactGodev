@@ -1,9 +1,17 @@
 import styled from "styled-components";
 import { getTheme } from "../../../../assets/theme";
+const theme = localStorage.getItem("theme");
 
 export const StContainer = styled.div`
-  background: ${props => getTheme(props.theme).backgroundPrimary};
-  box-shadow: 1px 2px 7px 1px ${props => getTheme(props.theme).boxShadowPrimary};
+  background: ${props =>
+    props.modoClaro === true
+      ? getTheme(theme).claro.background
+      : getTheme(theme).escuro.background};
+  box-shadow: 1px 2px 7px 1px
+    ${props =>
+      props.modoClaro === true
+        ? getTheme(theme).claro.boxShadow
+        : getTheme(theme).escuro.boxShadow};
   border-radius: 3px;
   display: flex;
   flex-direction: column;
@@ -20,7 +28,10 @@ export const StContainer = styled.div`
       : "100%"};
 
   & > span {
-    color: ${props => getTheme(props.theme).colorNivel1};
+    color: ${props =>
+      props.modoClaro
+        ? getTheme(theme).claro.color.nivel1
+        : getTheme(theme).escuro.color.nivel1};
     font-size: 1rem;
     margin-top: 20px;
   }
@@ -31,13 +42,19 @@ export const StContainer = styled.div`
 
     & > span {
       &:first-child {
-        color: ${props => getTheme(props.theme).colorNivel2};
+        color: ${props =>
+          props.modoClaro
+            ? getTheme(theme).claro.color.nivel2
+            : getTheme(theme).escuro.color.nivel2};
         font-weight: bolder;
         font-size: 1.1rem;
         margin-bottom: 10px;
       }
       &:not(:first-child) {
-        color: ${props => getTheme(props.theme).colorNivel3};
+        color: ${props =>
+          props.modoClaro
+            ? getTheme(theme).claro.color.nivel3
+            : getTheme(theme).escuro.color.nivel3};
         text-align: justify;
       }
     }

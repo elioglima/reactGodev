@@ -12,8 +12,11 @@ middlewares.push(sagaMiddleware);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+const sessionStart = () => {};
+
 const store = createStore(
   reducers(history),
+  sessionStart(),
   composeEnhancers(applyMiddleware(...middlewares, routerMiddleware(history)))
 );
 

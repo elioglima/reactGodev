@@ -1,11 +1,23 @@
 import styled from "styled-components";
+import { getTheme } from "../../../assets/theme";
+const theme = localStorage.getItem("theme");
 
 export const StContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 20px 5%;
   justify-content: space-between;
-  background: rgba(20, 20, 20);
+
+  background: ${props =>
+    props.modoClaro === true
+      ? getTheme(theme).claro.header.background
+      : getTheme(theme).escuro.header.background};
+
+  box-shadow: 1px 2px 7px 1px
+    ${props =>
+      props.modoClaro === true
+        ? getTheme(theme).claro.header.boxShadow
+        : getTheme(theme).escuro.header.boxShadow};
 `;
 
 export const StTitulo = styled.div`
@@ -71,14 +83,34 @@ export const StPesquisa = styled.div`
 `;
 export const StPesquisaBaseInput = styled.div`
   display: flex;
-  background: ${props => (props.pesquisa.length > 0 ? "#323332" : "#000")};
   border: 1px;
   height: 20px;
   border-radius: 5px;
   padding: 5px;
+  background: ${props => (props.pesquisa.length > 0 ? "#323332" : "#000")};
 
-  & input {
-    background: ${props => (props.pesquisa.length > 0 ? "#323332" : "#000")};
+  background: ${props =>
+    props.modoClaro === true
+      ? getTheme(theme).claro.header.pesquisa.background
+      : getTheme(theme).escuro.header.pesquisa.background};
+
+  box-shadow: 1px 2px 7px 1px
+    ${props =>
+      props.modoClaro === true
+        ? getTheme(theme).claro.header.pesquisa.boxShadow
+        : getTheme(theme).escuro.header.pesquisa.boxShadow};
+
+  & > input {
+    background: ${props => {
+      if (props.pesquisa.length > 0) {
+        return getTheme(theme).claro.header.pesquisa.focus.background;
+      }
+
+      return props.modoClaro === true
+        ? getTheme(theme).claro.header.pesquisa.background
+        : getTheme(theme).escuro.header.pesquisa.background;
+    }};
+
     color: #babfbc;
     font-family: "Amaranth", sans-serif;
     font-size: 13px;
@@ -88,15 +120,21 @@ export const StPesquisaBaseInput = styled.div`
     border: none;
 
     &:focus {
-      background: #323332;
+      background: ${props =>
+        props.modoClaro === true
+          ? getTheme(theme).claro.header.pesquisa.focus.background
+          : getTheme(theme).escuro.header.pesquisa.focus.background};
     }
   }
 
   &:focus-within {
-    background: #323332;
+    background: ${props =>
+      props.modoClaro === true
+        ? getTheme(theme).claro.header.pesquisa.focus.background
+        : getTheme(theme).escuro.header.pesquisa.focus.background};
   }
 
-  & i {
+  & > i {
     cursor: pointer;
     margin-top: 2px;
     font-size: 15px;

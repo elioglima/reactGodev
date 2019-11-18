@@ -13,7 +13,7 @@ export const post = (method, data = {}, timeout = 120000) => {
     const url = `${config.API.URL}/${method}`;
     logs("http.post", url, data);
 
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // await new Promise(resolve => setTimeout(resolve, 1000));
 
     await axiosInstance({
       method: "post",

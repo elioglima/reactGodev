@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { StContainer } from "./styles";
 import Header from "../components/Header";
 import Body from "../components/Body";
@@ -7,8 +6,6 @@ import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 import ListaDestaques from "../components/listaDestaques";
 import ListaIcones from "../components/listaIcones";
-
-const theme = "dark";
 
 const Objeto = () => {
   return (
@@ -19,7 +16,7 @@ const Objeto = () => {
       />
       <Body banner={Banner} paddingVertical={"0"} paddingHorizontal={"5%"}>
         <ListaIcones />
-        <ListaDestaques theme={theme} colCount={2} />
+        <ListaDestaques colCount={2} />
       </Body>
       <Footer />
     </StContainer>

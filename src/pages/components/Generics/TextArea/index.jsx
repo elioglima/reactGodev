@@ -3,12 +3,10 @@ import PropTypes from "prop-types";
 import { StContainer, StTitulo, StPesquisa } from "./styled";
 
 const TextArea = props => {
-  const [theme, setTheme] = useState("light");
   const [rows, setRows] = useState(1);
   const [value, setValue] = useState("");
   const [placeholder, setPlaceholder] = useState("");
 
-  useEffect(() => props.theme && setTheme(props.theme), [props.theme]);
   useEffect(() => setValue(props.value), [props.value]);
   useEffect(() => setValue(props.value), [props.value]);
   useEffect(() => setPlaceholder(props.placeholder), [props.placeholder]);
@@ -21,10 +19,9 @@ const TextArea = props => {
   };
 
   return (
-    <StContainer theme={theme} width={props.width}>
-      {props.titulo && <StTitulo theme={theme}>{props.titulo}</StTitulo>}
+    <StContainer width={props.width}>
+      {props.titulo && <StTitulo>{props.titulo}</StTitulo>}
       <StPesquisa
-        theme={theme}
         width={props.width}
         rows={rows}
         value={value}

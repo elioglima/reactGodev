@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { getTheme } from "../../../assets/theme";
+const theme = localStorage.getItem("theme");
 
 export const StContainer = styled.div`
   display: flex;
@@ -8,12 +10,16 @@ export const StContainer = styled.div`
   color: #fff;
   font-family: "sans-serif";
   letter-spacing: 3px;
-  border-top: 1px solid #0b1b24;
-  background: rgba(20, 20, 20);
 
-  i {
-    color: #fff;
-    font-size: 15px;
+  border-top: 1px solid #0b1b24;
+  background: ${props =>
+    props.modoClaro === true
+      ? getTheme(theme).claro.footer.background
+      : getTheme(theme).escuro.footer.background};
+
+  & > div > a {
     margin-left: 10px;
+    font-size: 15px;
+    color: #fff;
   }
 `;

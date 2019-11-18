@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { getTheme } from "../../assets/theme";
+const theme = localStorage.getItem("theme");
 
 export const StContainer = styled.div`
-  background: ${props => getTheme(props.theme).botaoClaro.background};
+  background: ${props => getTheme(theme).botaoClaro.background};
   display: flex;
   width: 100vw;
   height: 100vh;

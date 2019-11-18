@@ -1,4 +1,5 @@
 import styled from "styled-components";
+const theme = localStorage.getItem("theme");
 
 export const BASE = styled.div`
   display: flex;
@@ -12,15 +13,15 @@ export const StTabela = styled.div`
   flex-direction: column;
 
   background: ${props =>
-    props.theme
-      ? props.theme == "light"
+    theme
+      ? theme == "light"
         ? "#e5e5e5"
         : "rgba(40, 40, 40)"
       : "rgba(40, 40, 40)"};
   box-shadow: 1px 2px 7px 1px
     ${props =>
-      props.theme
-        ? props.theme == "light"
+      theme
+        ? theme == "light"
           ? "#000"
           : "rgba(255,255,255, 0.2)"
         : "rgba(255,255,255, 0.2)"};

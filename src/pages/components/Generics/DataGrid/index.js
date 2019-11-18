@@ -15,9 +15,7 @@ export default props => {
   const [dgColunas, setdgColunas] = useState([]);
   const [dgLinhas, setdgLinhas] = useState([]);
   const [widthAuto, setWidthAuto] = useState(true);
-  const [theme, setTheme] = useState("light");
 
-  useEffect(() => setTheme(props.theme), [props.theme]);
   useEffect(() => {
     setWidthAuto(props.widthAuto);
   }, [props.widthAuto]);
@@ -38,7 +36,7 @@ export default props => {
   return (
     <BASE>
       <Caption>Lista de Usuários</Caption>
-      <StTabela theme={props.theme}>
+      <StTabela>
         <Titulo>
           {dgColunas.map(c => {
             if (c.hide == true) return;

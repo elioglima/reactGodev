@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { getTheme } from "../../../../assets/theme";
+const theme = localStorage.getItem("theme");
 
 export const StContainer = styled.div`
   width: ${props => props.width && props.width};
@@ -30,21 +32,19 @@ export const StBase = styled.div`
     props.openAutoComplete && "border-bottom-right-radius: 0 !important"};
 
   background: ${props =>
-    props.theme
-      ? props.theme == "light"
-        ? props.focus || props.openAutoComplete
-          ? "#ecfcff"
-          : "#fff"
-        : "rgba(40, 40, 40)"
-      : "rgba(40, 40, 40)"} !important;
+    props.modoClaro === true
+      ? props.focus
+        ? getTheme(theme).claro.textAutoComplete.focus.background
+        : getTheme(theme).claro.textAutoComplete.background
+      : getTheme(theme).escuro.textAutoComplete.background + "!important"};
 
   box-shadow: 1px 2px 7px 1px
     ${props =>
-      props.theme
-        ? props.theme == "light"
-          ? "#000"
-          : "rgba(255,255,255, 0.2)"
-        : "rgba(255,255,255, 0.2)"} !important;
+      props.modoClaro === true
+        ? props.focus
+          ? getTheme(theme).claro.textAutoComplete.focus.boxShadow
+          : getTheme(theme).claro.textAutoComplete.boxShadow
+        : getTheme(theme).escuro.textAutoComplete.boxShadow + "!important"};
 `;
 
 export const StPesquisa = styled.input`
@@ -59,8 +59,14 @@ export const StPesquisa = styled.input`
 
   border-top-left-radius: 3px !important;
   border-bottom-left-radius: 3px !important;
-  background: ${props =>
-    (props.focus || props.openAutoComplete) && "#ecfcff"} !important;
+  background: ${props => {
+    if (props.focus || props.openAutoComplete) {
+      return props.modoClaro === true
+        ? getTheme(theme).claro.textAutoComplete.focus.background
+        : getTheme(theme).escuro.textAutoComplete.focus.background +
+            "!important";
+    }
+  }};
 `;
 
 export const StIcone = styled.div`
@@ -81,24 +87,24 @@ export const StAutoComplete = styled.div`
   flex-direction: column !important;
   width: 97.5% !important;
 
-  background: ${props =>
-    props.theme
-      ? props.theme == "light"
-        ? "#fff"
-        : "#979797"
-      : "rgba(40, 40, 40)"} !important;
-
-  box-shadow: 1px 5px 7px 1px
-    ${props =>
-      props.theme
-        ? props.theme == "light"
-          ? "#000"
-          : "#ececeb"
-        : "#ececeb"} !important;
-
   border-radius: 3px !important;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
+
+  background: ${props =>
+    props.modoClaro === true
+      ? props.focus
+        ? getTheme(theme).claro.textAutoComplete.focus.background
+        : getTheme(theme).claro.textAutoComplete.background
+      : getTheme(theme).escuro.textAutoComplete.background + "!important"};
+
+  box-shadow: 1px 2px 7px 1px
+    ${props =>
+      props.modoClaro === true
+        ? props.focus
+          ? getTheme(theme).claro.textAutoComplete.focus.boxShadow
+          : getTheme(theme).claro.textAutoComplete.boxShadow
+        : getTheme(theme).escuro.textAutoComplete.boxShadow + "!important"};
 `;
 
 export const StLinha = styled.div`

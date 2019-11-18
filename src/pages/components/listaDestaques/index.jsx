@@ -18,19 +18,20 @@ const Objeto = props => {
   }, []);
 
   return (
-    <StContainer style={{ width: props.width }} theme={props.theme}>
-      {props.titulo && <StTitulo theme={props.theme}>{props.titulo}</StTitulo>}
-      <StLista theme={props.theme}>
-        {dados.map((dados, index) => {
-          return (
-            <BoxItem
-              key={"BoxItemKey" + index}
-              dados={dados}
-              theme={props.theme}
-              colCount={props.colCount}
-            />
-          );
-        })}
+    <StContainer style={{ width: props.width }}>
+      {props.titulo && <StTitulo>{props.titulo}</StTitulo>}
+      <StLista>
+        {dados.length > 0 &&
+          dados.map((dados, index) => {
+            return (
+              <BoxItem
+                modoClaro={props.modoClaro}
+                key={"BoxItemKey" + index}
+                dados={dados}
+                colCount={props.colCount}
+              />
+            );
+          })}
       </StLista>
     </StContainer>
   );

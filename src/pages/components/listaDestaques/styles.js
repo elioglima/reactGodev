@@ -1,4 +1,5 @@
 import styled from "styled-components";
+// const theme = localStorage.getItem("theme");
 
 export const StContainer = styled.div`
   display: flex;

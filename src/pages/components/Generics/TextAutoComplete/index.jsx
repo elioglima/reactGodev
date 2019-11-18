@@ -14,7 +14,6 @@ import {
 export const useMountEffect = fun => useEffect(fun, []);
 
 const TextInput = props => {
-  const [theme, setTheme] = useState("light");
   const inputPesq = useRef();
   const [openAutoComplete, setOpenAutoComplete] = useState(false);
   const [dados, setDados] = useState("");
@@ -25,7 +24,6 @@ const TextInput = props => {
   const [focus, setFocus] = useState(false);
   const itemsRef = useRef([]);
 
-  useEffect(() => props.theme && setTheme(props.theme), [props.theme]);
   useEffect(() => {
     setBaseDados(props.dados);
     setDados(props.dados);
@@ -127,12 +125,11 @@ const TextInput = props => {
   };
 
   return (
-    <StContainer theme={theme} width={props.width} onMouseLeave={onMouseLeave}>
+    <StContainer width={props.width} onMouseLeave={onMouseLeave}>
       {props.titulo && <StTitulo>{props.titulo}</StTitulo>}
 
-      <StBase theme={theme} openAutoComplete={openAutoComplete} focus={focus}>
+      <StBase openAutoComplete={openAutoComplete} focus={focus}>
         <StPesquisa
-          theme={theme}
           openAutoComplete={openAutoComplete}
           focus={focus}
           type="text"
@@ -155,7 +152,7 @@ const TextInput = props => {
         />
       </StBase>
 
-      <StAutoComplete theme={theme} openAutoComplete={openAutoComplete}>
+      <StAutoComplete openAutoComplete={openAutoComplete}>
         {dados &&
           dados.map((r, i) => {
             return (
