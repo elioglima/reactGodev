@@ -11,8 +11,6 @@ module.exports = async (req, res) => {
   var db = admin.database();
   var ref = db.ref("/postagem");
   ref.once("value", function(snapshot) {
-    console.log(snapshot.val());
+    return res.status(200).json(snapshot.val());
   });
-
-  res.status(200).json({ teste: "teste" });
 };
