@@ -75,7 +75,13 @@ if (cluster.isMaster) {
   });
 
   app.use("/api", api);
-  db.start();
+  // db.start();
+
+  const admin = require("firebase-admin");
+  admin.initializeApp({
+    credential: admin.credential.applicationDefault(),
+    databaseURL: "https://godev-9aad7.firebaseio.com"
+  });
 
   app.listen(config.port, () => {
     global.logger.info(`api up on port ${config.port}`);

@@ -1,12 +1,13 @@
-const DBPostagem = require("../../../../db/models/Postagem");
 const libObj = require("../../../../libs/fn_obj");
 
 module.exports = async Dados => {
   let ModeloRetornoClient = libObj.Assign(require("../../ModeloRetornoClient"));
 
   try {
-    let registros = await DBPostagem.FindTodos({});
-    if (registros.length === 0) {
+    const dbPostagem = require("../../../../db/models/postagem");
+    const { recordCount, data } = await dbPostagem.ListaTodos();
+    let registros = data;
+    if (recordCount === 0) {
       ModeloRetornoClient.mensagem = "Nenhum registro localizado";
       ModeloRetornoClient.response = {
         totalRegistros: 0,
@@ -19,7 +20,7 @@ module.exports = async Dados => {
     ModeloRetornoClient.erro = false;
     ModeloRetornoClient.mensagem = "Registro Localizado";
     ModeloRetornoClient.response = {
-      totalRegistros: registros.length,
+      totalRegistros: recordCount,
       registros
     };
     return ModeloRetornoClient;
