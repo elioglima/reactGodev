@@ -78,8 +78,11 @@ if (cluster.isMaster) {
   // db.start();
 
   const admin = require("firebase-admin");
+
+  var serviceAccount = require("/Users/elio.lima/Downloads/godev-9aad7-firebase-admin.json");
+
   admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
+    credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://godev-9aad7.firebaseio.com"
   });
 

@@ -5,7 +5,7 @@ const theme = localStorage.getItem("theme");
 export const StContainer = styled.div`
   display: flex !important;
   width: ${props => props.width && props.width} !important;
-  margin: 0px 0px !important;
+  margin: ${props => (props.margin ? props.margin : "0px 0px")} !important;
   padding: 0px 0px 0 0px !important;
   flex-direction: column !important;
 `;
@@ -34,7 +34,7 @@ export const StPesquisa = styled.input`
   border-radius: 3px !important;
   border: none !important;
   outline: none !important;
-  padding: 2px 3px !important;
+  padding: ${props => (props.padding ? props.padding : "2px 3px")} !important;
   font-size: 0.9em !important;
   font-family: "Roboto Slab", serif !important;
   letter-spacing: 1px !important;

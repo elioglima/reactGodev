@@ -6,7 +6,7 @@ import { ModalBox, Box, Header, Title, Body } from "./styles";
 import close from "../../../assets/icons/close.svg";
 import { closeModal } from "../../../redux/actions/modais";
 
-const Modal = ({ idModal, title, body }) => {
+const Modal = ({ modoTheme, idModal, title, body }) => {
   const dispatch = useDispatch();
   const data = useSelector(state => state.modais[idModal], []);
   const { show, onCloseModal } = data || {};
@@ -22,7 +22,7 @@ const Modal = ({ idModal, title, body }) => {
 
   return createPortal(
     <ModalBox>
-      <Box>
+      <Box modoTheme={modoTheme ? modoTheme : "claro"}>
         <Header>
           <Title>{title}</Title>
           <div className="close">

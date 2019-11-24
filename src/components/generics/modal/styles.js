@@ -27,15 +27,16 @@ export const ModalBox = styled.div`
 `;
 
 export const Box = styled.div`
-  background: white;
+  background: ${props => getTheme(theme)[props.modoTheme].modal.background};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   contain: content;
   display: flex;
   flex-direction: column;
-  max-height: 80vh;
+  max-height: 1000vh;
   min-width: 30vw;
   z-index: 1;
+  padding-right: 13px;
   @media (max-width: 568px) {
     border-radius: 0;
     height: 100vh;
@@ -56,11 +57,11 @@ export const Header = styled.div`
     border-radius: 0;
   }
 
-  & .close {
+  & > .close {
     color: white;
     cursor: pointer;
     font-size: 40px;
-    margin: auto 51px;
+    margin: 0 20px;
     text-align: right;
     @media (max-width: 568px) {
       margin: 20px 15px;
@@ -75,8 +76,8 @@ export const Title = styled.div`
       : getTheme(theme).escuro.modal.titulo.color};
 
   font-size: 24px;
-  margin: auto 0;
-  padding: 30px 51px;
+  margin: 0 0;
+  padding: 30px 35px;
   width: fit-content;
   @media (max-width: 568px) {
     padding: 30px 15px;
@@ -96,7 +97,7 @@ export const Body = styled.div`
     padding-bottom: 20px;
   }
 
-  & a {
+  & > a {
     margin-top: 36px;
     margin-left: auto;
     margin-right: auto;

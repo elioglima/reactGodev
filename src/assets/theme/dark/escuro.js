@@ -8,6 +8,10 @@ export default {
     nivel3: "#ccc"
   },
 
+  notFound: {
+    background: "rgba(0,0,0, 0.3)"
+  },
+
   botao: {
     default: {
       background: "rgba(255,255,255, 0.2)",

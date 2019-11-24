@@ -19,9 +19,13 @@ const TextInput = props => {
   };
 
   return (
-    <StContainer width={props.width}>
+    <StContainer
+      width={props.width}
+      margin={props.margin ? props.margin : false}
+    >
       {props.titulo && <StTitulo>{props.titulo}</StTitulo>}
       <StPesquisa
+        padding={props.inputPadding ? props.inputPadding : false}
         type="text"
         value={value ? value : ""}
         placeholder={placeholder}
