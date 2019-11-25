@@ -5,7 +5,7 @@ import Modal from "../../../components/generics/modal";
 import { closeModal } from "../../../redux/actions/modais";
 import { StContainer, StBox, StBaseBotoes } from "./styles";
 import EmailInput from "../../components/Generics/TextInput";
-import SenhaInput from "../../components/Generics/TextInput";
+import PasswordInput from "../../components/Generics/TextInput";
 import { acEntrarSistema } from "../../../redux/actions/acesso/actionAcesso";
 
 const Objeto = () => {
@@ -16,8 +16,8 @@ const Objeto = () => {
   const { tryAgain, tryAgainParams, retorno, descNoOk, descOK, title } =
     data || {};
 
-  const [email, setEmail] = useState("");
-  const [senha, setsenha] = useState("");
+  const [email, setEmail] = useState("elio.designer@hotmail.com");
+  const [password, setPassword] = useState("203010");
 
   const [msgTela, setMsgTela] = useState(
     <p>Parece que houve um erro, nenhuma msg informada.</p>
@@ -30,7 +30,7 @@ const Objeto = () => {
   const onClick = e => {
     e.preventDefault();
     dispatch(closeModal(idModal));
-    dispatch(acEntrarSistema({ email, senha }));
+    dispatch(acEntrarSistema({ email, password }));
   };
 
   let body = (
@@ -43,11 +43,11 @@ const Objeto = () => {
           value={email}
           placeholder={"informe o e-mail..."}
         />
-        <SenhaInput
+        <PasswordInput
           margin={"10px 0"}
           inputPadding={"10px 10px"}
           titulo={"Senha"}
-          value={senha}
+          value={password}
           placeholder={"informe a senha..."}
         />
         <StBaseBotoes>

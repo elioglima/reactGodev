@@ -1,19 +1,17 @@
 import logs from "../../logs";
-import { exePost } from "../tools";
+import { SignInWithPassword } from "../firebase";
 import { retornoSucesso, retornoErro } from "../generics";
 
-export default async () => {
+export default async ({ email, password }) => {
   logs("apiEntrarSistema");
+  const retornoMetodo = await SignInWithPassword(email, password);
 
-  const retornoMetodo = await exePost("acesso/entrar");
   logs("apiEntrarSistema retornoMetodo", retornoMetodo);
-
   const { err, obj, msg } = retornoMetodo;
 
   if (err) return retornoErro(msg);
 
-  return retornoSucesso("Sucesso", {
-    totalRegistros: obj.response.registros.length,
-    registros: obj.response.registros
-  });
+  require("../../libs/fn_cookies").salvar("token", obj.idToken);
+
+  return retornoSucesso("Sucesso", obj);
 };

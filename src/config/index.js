@@ -11,6 +11,7 @@ module.exports = {
     URL: process.env.REACT_APP_API_URL || "http://localhost:5225/api"
   },
   Firebase: {
+    url_googleapi: process.env.REACT_APP_FB_URL_GOOGLEAPIS || "",
     apiKey: process.env.REACT_APP_FB_APIKEY || "",
     authDomain: process.env.REACT_APP_FB_AUTBDOMAIN || "",
     databaseURL: process.env.REACT_APP_FB_DATABASEURL || "",

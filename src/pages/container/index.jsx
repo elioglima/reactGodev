@@ -8,12 +8,14 @@ const Container = props => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(openModal("ShowAcesso", {}));
+    if (require("../../libs/fn_cookies").ler("token").length == 0)
+      dispatch(openModal("ShowAcesso", {}));
   }, []);
 
   return (
     <StContainer>
       <ShowAcesso />
+      {console.log(require("../../libs/fn_cookies").ler("token"))}
       {props.children}
     </StContainer>
   );

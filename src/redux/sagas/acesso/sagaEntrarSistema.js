@@ -7,9 +7,9 @@ import {
   acEntrarSistemaSuccess
 } from "../../actions/acesso/actionAcesso";
 
-export function* sagaEntrarSistema() {
+export function* sagaEntrarSistema({ email, password }) {
   logs("Saga Acesso");
-  const retornoAPI = yield call(apiEntrarSistema, {});
+  const retornoAPI = yield call(apiEntrarSistema, { email, password });
   logs("Saga Acesso rtornoAPI", retornoAPI);
   if (retornoAPI.err === true) {
     logs("Saga Acesso acEntrarSistemaError", retornoAPI.obj);

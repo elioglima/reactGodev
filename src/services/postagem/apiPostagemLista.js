@@ -3,17 +3,17 @@ import { exePost } from "../tools";
 import { retornoSucesso, retornoErro } from "../generics";
 
 export default async () => {
-  logs("apiPostagemLista");
+  // logs("apiPostagemLista");
 
-  const retornoMetodo = await exePost("postagem/todos");
-  logs("apiPostagemLista retornoMetodo", retornoMetodo);
+  // const retornoMetodo = await exePost("postagem/todos");
+  // logs("apiPostagemLista retornoMetodo", retornoMetodo);
 
-  const { err, obj, msg } = retornoMetodo;
+  // const { err, obj, msg } = retornoMetodo;
 
-  if (err) return retornoErro(msg);
+  // if (err) return retornoErro(msg);
 
   return retornoSucesso("Sucesso", {
-    totalRegistros: obj.response.registros.length,
-    registros: obj.response.registros
+    totalRegistros: 0,
+    registros: []
   });
 };

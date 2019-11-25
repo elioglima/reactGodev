@@ -4,8 +4,8 @@ const INITIAL_STATE = {
   loading: false,
   loaded: true,
   error: false,
-  totalRegistros: [],
-  registros: []
+  email: "",
+  password: ""
 };
 
 export default (state = INITIAL_STATE, action) => {
